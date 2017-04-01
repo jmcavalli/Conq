@@ -42,13 +42,13 @@
 A-Egypt
 B-Sumer
 C-Minoans
-D-Nubians-N
-E-Ethiopians-N
-F-Europeans-N
-G-Indo-europeans-N
-H-Indus Valley Civilization-N
-I-Longshan Culture-N
-J-Jomon Culture-N
+D-Nubians --N
+E-Ethiopians --N
+F-Europeans --N
+G-Indo-europeans --N
+H-Indus Valley Civilization --N
+I-Longshan Culture --N
+J-Jomon Culture --N
 --World 2000BC--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -74,11 +74,11 @@ B-Ur
 C-Indus Valley Civilization
 D-Xia
 E-Minoans
-F-Europeans-N
-G-Indo-europeans-N
-H-Nubians-N
-I-Ethiopians-N
-J-Jomon Culture-N
+F-Europeans --N
+G-Indo-europeans --N
+H-Nubians --N
+I-Ethiopians --N
+J-Jomon Culture --N
 --World 500BC--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -107,8 +107,8 @@ E-Carthage
 F-Mayans
 G-Kush
 H-Saba
-I-Celts-N
-J-Scythians-N
+I-Celts --N
+J-Scythians --N
 --World 0AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -138,7 +138,7 @@ F-Tocharians
 G-Indo-Scythians
 H-Meroe
 I-Himyar
-J-Picts-N
+J-Picts --N
 --World 500AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -162,8 +162,8 @@ J-Picts-N
 A-Eastern Roman Empire
 B-Sassanid
 C-Hephthalite
-D-Northern Wei-Chinese
-E-Southern Qi-Chinese
+D-Northern Wei --Chinese
+E-Southern Qi --Chinese
 F-Ostrogoths
 G-Visigoths
 H-Franks
@@ -258,7 +258,7 @@ F-Ming
 G-Timurids
 H-Incas
 I-Aztecs
-J-Novgrod
+J-Novgorod
 --World 1750AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -673,7 +673,7 @@ J-Cuba
 16= X X X X X X X X X X X X X X X = =
 17= = = = = X X X X X X X X X X X X =
 18= = = = = X X X X X X X X X X X X X
---Caribbean 1700AD--
+--Caribbean Sea 1700AD--
   a b c d e f g h i j k l m n o p q r
 1 = = A = = = = = = = = = = = = = = =
 2 = = X = = = = = = = = = = = = = = =
@@ -699,11 +699,7 @@ C-France
 D-Netherlands
 E-Denmark
 F-Carib --N
-G-
-H-
-I-
-J-
---Caribbean 1800AD--
+--Caribbean Sea 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = A = = = = = = = = = = = = = = =
 2 = = A = = = = = = = = = = = = = = =
@@ -728,12 +724,7 @@ B-Britian
 C-France
 D-Netherlands
 E-Denmark
-F-
-G-
-H-
-I-
-J-
---Caribbean 1830AD--
+--Caribbean Sea 1830AD--
   a b c d e f g h i j k l m n o p q r
 1 = = F = = = = = = = = = = = = = = =
 2 = = F = = = = = = = = = = = = = = =
@@ -761,9 +752,7 @@ E-Central America
 F-USA
 G-France
 H-Netherlands
-I-
-J-
---Caribbean 1900AD--
+--Caribbean Sea 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = A = = = = = = = = = = = = = = =
 2 = = A = = = = = = = = = = = = = = =
@@ -794,7 +783,7 @@ H-Netherlands
 I-Nicaragua
 J-Costa Rica
 K-Honduras
---Caribbean 2000AD--
+--Caribbean Sea 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = F = = = = = = = = = = = = = = =
 2 = = F = = = = = = = = = = = = = = =
@@ -995,11 +984,6 @@ B-USA
 C-Canada
 D-Denmark
 E-Eskimos --N
-F-
-G-
-H-
-I-
-J-
 --Canada 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = A A A = X X X
@@ -1025,11 +1009,6 @@ B-USA
 C-Britian
 D-Denmark
 E-Eskimos --N
-F-
-G-
-H-
-I-
-J-
 --Canada 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = A A A = C C C
@@ -1053,13 +1032,6 @@ J-
 A-Canada
 B-USA
 C-Denmark
-D-
-E-
-F-
-G-
-H-
-I-
-J-
 ==USA==
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X = = = X X X
@@ -1285,10 +1257,6 @@ C-Spain
 D-France
 E-Chilcotin --N
 F-Ktunaxa --N
-G-
-H-
-I-
-J-
 --USA 1810AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B B B B B B B B B = = = B B B
@@ -1314,11 +1282,6 @@ B-Britian
 C-Spain
 D-Ktunaxa --N
 E-Chilcotin --N
-F-
-G-
-H-
-I-
-J-
 --USA 1840AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B B B B B B B B B = = = B B B
@@ -1346,9 +1309,6 @@ D-Texas
 E-Spain
 F-Haiti
 G-Ktunaxa --N
-H-
-I-
-J-
 --USA 1865AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C C C C C C C C C C = = = C C C
@@ -1374,11 +1334,6 @@ B-Confederacy
 C-Britian
 D-Mexico
 E-Spain
-F-
-G-
-H-
-I-
-J-
 --USA 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B B B B B B B B B = = = B B B
@@ -1405,10 +1360,6 @@ C-Mexico
 D-Cuba
 E-Bahamas
 F-Haiti
-G-
-H-
-I-
-J-
 ==Mexico==
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -1454,11 +1405,6 @@ B-Teotihuacan
 C-Zapotec
 D-Uto-Aztecan --N
 E-Mogollon --N
-F-
-G-
-H-
-I-
-J-
 --Mexico 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -1485,10 +1431,6 @@ C-Mixtec --N
 D-Mogollon --N
 E-Chichimeca --N
 F-Uto-Aztecan --N
-G-
-H-
-I-
-J-
 --Mexico 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -1548,7 +1490,6 @@ F-Apache --N
 G-Choctaw --N
 H-Huastec --N
 I-Chichimeca --N
-J-
 --Mexico 1840AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A A A A A B B B B B B B B B
@@ -1577,8 +1518,6 @@ E-Honduras
 F-Nicaragua
 G-Britian
 H-El Salvador
-I-
-J-
 --Mexico 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B B B B B B B B B B B B B B B
@@ -1606,9 +1545,6 @@ D-Honduras
 E-Nicaragua
 F-Belize
 G-El Salvador
-H-
-I-
-J-
 ==South America==
   a b c d e f g h i j k l m n o p q r
 1 = = = = X x = = = = = = = = = = = =
@@ -1657,8 +1593,6 @@ E-Muisca --N
 F-Marajoara --N
 G-Tairona --N
 H-Sican --N
-I-
-J-
 --South America 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = X x = = = = = = = = = = = =
@@ -1778,7 +1712,6 @@ F-Mapuche --N
 G-Ge --N
 H-Carib --N
 I-Panoan --N
-J-
 --South America 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = B b = = = = = = = = = = = =
@@ -1803,12 +1736,6 @@ A-Portugal
 B-Spain
 C-Britian
 D-France
-E-
-F-
-G-
-H-
-I-
-J-
 --South America 1820AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = B b = = = = = = = = = = = =
@@ -1836,9 +1763,6 @@ D-Argentina
 E-Chile
 F-Paraguay
 G-France
-H-
-I-
-J-
 --South America 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = X x = = = = = = = = = = = =
@@ -1915,10 +1839,6 @@ C-Chimor
 D-Tucanoan --N
 E-Panoan --N
 F-Wichi --N
-G-
-H-
-I-
-J-
 --Andes 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = A X X X X X X X X X X
@@ -1943,12 +1863,6 @@ A-Inca
 B-Tucanoan --N
 C-Panoan --N
 D-Wichi --N
-E-
-F-
-G-
-H-
-I-
-J-
 --Andes 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = C C F F F F D D D D D
@@ -1977,8 +1891,6 @@ E-Chile
 F-Colombia
 G-Argentina
 H-Paraguay
-I-
-J-
 ==Europe==
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X X = = X X X X X X
@@ -2708,7 +2620,6 @@ F-Danes --N
 G-Swedes --N
 H-Livonians --N
 I-Letts --N
-J-
 --Scandinavia 1250AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A X X X X X X X X X B B
@@ -2737,8 +2648,6 @@ E-Sweden
 F-Polotsk
 G-Lithuania
 H-Finns --N
-I-
-J-
 --Scandinavia 1300AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A X X X X X X X X X B B
@@ -2768,7 +2677,6 @@ F-Golden Horde
 G-Lithuania
 H-Polotsk
 I-Finns --N
-J-
 --Scandinavia 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A A D D D D D D D D B B
@@ -2793,12 +2701,6 @@ A-Denmark
 B-Russia
 C-Poland-Lithuania
 D-Sweden
-E-
-F-
-G-
-H-
-I-
-J-
 --Scandinavia 1950AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A A E E E E E B B B C C
@@ -2825,10 +2727,6 @@ C-USSR
 D-Denmark
 E-Sweden
 F-Germany
-G-
-H-
-I-
-J-
 --Scandinavia 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A A E E E E E B B B F F
@@ -3029,7 +2927,6 @@ F-Sweden
 G-Austria --HRE
 H-Netherlands
 I-Spain
-J-
 --North Sea 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = D D D D D D
@@ -3058,8 +2955,6 @@ E-Denmark
 F-Netherlands
 G-Belgium
 H-Austria-Hungary
-I-
-J-
 --North Sea 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = D D D D E E
@@ -4375,7 +4270,6 @@ F-Teutonic Knights
 G-Holy Roman Empire --HRE
 H-Denmark
 I-Venice
-J-
 --Eastern Europe 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 G G E E E = = E E E = A A = A A A A
@@ -4404,8 +4298,6 @@ E-Sweden
 F-Holy Roman Empire --HRE
 G-Denmark
 H-Venice
-I-
-J-
 --Eastern Europe 1650AD--
   a b c d e f g h i j k l m n o p q r
 1 G G E E E = = E E E = E E = A A A A
@@ -4563,9 +4455,6 @@ D-Sweden
 E-Romania
 F-Denmark
 G-Italy
-H-
-I-
-J-
 --Eastern Europe 1920AD--
   a b c d e f g h i j k l m n o p q r
 1 Q Q K K K = = M M M = M A = A A A A
@@ -4799,7 +4688,6 @@ F-Pergamon
 G-Dacians --N
 H-Illyrians --N
 I-Veneti --N
-J-
 --Balkans 900AD--
   a b c d e f g h i j k l m n o p q r
 1 D X D X X X X X X X X X X X X X X X
@@ -4829,7 +4717,6 @@ F-Serbia
 G-Italy
 H-Benevento
 I-Salerno
-J-
 --Balkans 1250AD--
   a b c d e f g h i j k l m n o p q r
 1 D D D D B B B B B B B C C C C C C C
@@ -4859,7 +4746,6 @@ F-Serbia
 G-Epirus
 H-Venice
 I-Latin Empire
-J-
 --Balkans 1300AD--
   a b c d e f g h i j k l m n o p q r
 1 D D D D B B B B B B B C C C C C C C
@@ -5012,9 +4898,6 @@ D-Moldavia
 E-Naples
 F-Venice
 G-Poland-Lithuania
-H-
-I-
-J-
 --Balkans 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A A A A A A A A A A A C C C
@@ -5044,7 +4927,6 @@ F-Romania
 G-Serbia
 H-Montenegro
 I-Greece
-J-
 --Balkans 1940AD--
   a b c d e f g h i j k l m n o p q r
 1 F F F F I I I D D D D D D B B B B B
@@ -5074,7 +4956,6 @@ F-Third Reich
 G-Greece
 H-Turkey
 I-Slovakia
-J-
 --Balkans 1950AD--
   a b c d e f g h i j k l m n o p q r
 1 J J J J K K K K D D D H H H H H H H
@@ -5106,7 +4987,7 @@ H-USSR
 I-Italy
 J-Austria
 K-Czechoslovalia
---Balkans 2000AD--
+--Balkans 2010AD--
   a b c d e f g h i j k l m n o p q r
 1 I I I I Q Q Q D D D D P P P P B O O
 2 I I I I D D D D D D B B B B B B B O
@@ -5143,36 +5024,6 @@ N-Montenergo
 O-Moldova
 P-Ukraine
 Q-Slovakia
---Balkans 2010AD--
-  a b c d e f g h i j k l m n o p q r
-1 X X X X X X X X X X X X X X X X X X
-2 X X X X X X X X X X X X X X X X X X
-3 X X X X X X X X X X X X X X X X X X
-4 X X X X X X X X X X X X X X X X X X
-5 X X X X X X X X X X X X X X X X X X
-6 X X X X X X X X X X X X X X X X X X
-7 X X X X X X X X X X X X X X X X X X
-8 = = X X X X X X X X X X X X X X X X
-9 = = X X X X X X X X X X X X X X X X
-10= = = X X X X X X X X X X X X X X X
-11= = = = X X X X X X X X X X X X X =
-12X = = = = X X X X X X X X X X X X =
-13X = = = = = X X X X X X X X X X X =
-14X X X = = = = X X X X X X X X X X X
-15X X X X = = = X X X X X X X X X X X
-16= X X X X X = X X X X X = = = = = =
-17= = = X = X = X X X X = = = = X X X
-18= = = X = = = = X X X X = = = = X X
-A-
-B-
-C-
-D-
-E-
-F-
-G-
-H-
-I-
-J-
 ==British Isles==
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = = = = = = =
@@ -5252,7 +5103,6 @@ F-Leinster
 G-Connacht
 H-Ulster
 I-Munster
-J-
 --British Isles 1250AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = = = = = = =
@@ -5279,10 +5129,6 @@ C-Wales
 D-Norway
 E-Munster --N
 F-Ulster --N
-G-
-H-
-I-
-J-
 --British Isles 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = = = = = = =
@@ -5305,14 +5151,6 @@ J-
 18= = = = = = = A A A = = = = = = = =
 A-UK
 B-Ireland
-C-
-D-
-E-
-F-
-G-
-H-
-I-
-J-
 ==Iberia==
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = X X X X X X X
@@ -5360,9 +5198,6 @@ D-Celts --N
 E-Iberians --N
 F-Lusitanians --N
 G-Celtberians --N
-H-
-I-
-J-
 --Iberia 410AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = A A A A A A A
@@ -5387,12 +5222,6 @@ A-Western Roman Empire
 B-Vandals
 C-Suebi
 D-Alans
-E-
-F-
-G-
-H-
-I-
-J-
 --Iberia 560AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = C C C C C B B
@@ -5420,9 +5249,6 @@ D-Suebi
 E-Cantabri --N
 F-Mauretania --N
 G-Vascons --N
-H-
-I-
-J-
 --Iberia 900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = C C C C C C C
@@ -5448,11 +5274,6 @@ B-Cordoba
 C-West Francia
 D-Idrisid
 E-Byzantium
-F-
-G-
-H-
-I-
-J-
 --Iberia 1070AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = G G G G G G G
@@ -5521,7 +5342,6 @@ F-Majorca
 G-Valencia
 H-Albarracin
 I-Alpuente
-J-
 --Iberia 1150AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = G G G G G G G
@@ -5551,7 +5371,6 @@ F-Murcia
 G-France
 H-Almoravid
 I-Pamplona
-J-
 --Iberia 1200AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = G G G G F F F
@@ -5581,7 +5400,6 @@ F-France
 G-England
 H-Navarre
 I-Almoravid
-J-
 --Iberia 1450AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = I E E E E E E
@@ -5611,7 +5429,6 @@ F-Marinid
 G-Hafsid
 H-Navarre
 I-England
-J-
 --Iberia 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = C C C C C C C
@@ -5638,10 +5455,6 @@ C-France
 D-Algeria
 E-Morocco
 F-Andorra
-G-
-H-
-I-
-J-
 ==France==
   a b c d e f g h i j k l m n o p q r
 1 = = X X X X X X X = X X X X X X X X
@@ -5781,8 +5594,6 @@ E-Wessex
 F-Sussex
 G-Kent
 H-Brittany --N
-I-
-J-
 --France 880AD--
   a b c d e f g h i j k l m n o p q r
 1 = = E E E E E E E = A A A A A B B B
@@ -5812,7 +5623,6 @@ F-Asturias
 G-Cordoba
 H-Brittany
 I-Provence
-J-
 --France 900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = C C C C C C C = A A B B B B B B
@@ -5842,7 +5652,6 @@ F-Burgundy
 G-Brittany
 H-Cordoba
 I-Provence
-J-
 --France 1000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B B B B B = A A C C C C C C
@@ -5869,10 +5678,6 @@ C-Holy Roman Empire --HRE
 D-Burgundy
 E-Leon
 F-Pamplona
-G-
-H-
-I-
-J-
 --France 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B B B B B = B A C C C C C C
@@ -5900,9 +5705,6 @@ D-Castile
 E-Aragon
 F-Navarre
 G-Papal States
-H-
-I-
-J-
 --France 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B B B B B = A F F F F C C C
@@ -5932,7 +5734,6 @@ F-Belgium
 G-Switzerland
 H-Luxembourg
 I-Andorra
-J-
 ==Germany==
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = X X x x x = = = = = =
@@ -6012,8 +5813,6 @@ E-Alamanni
 F-Burgundians
 G-Frisians --N
 H-Lombards --N
-I-
-J-
 --Germany 600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = X X x x x = = = = = =
@@ -6043,7 +5842,6 @@ F-Orleans
 G-Frisians --N
 H-Pomeranians --N
 I-Polans --N
-J-
 --Germany 1650AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = G G g g g = = = = = =
@@ -6252,9 +6050,6 @@ D-Spoleto
 E-Franks
 F-Umayyad
 G-Avars
-H-
-I-
-J-
 --Italy 1000AD--
   a b c d e f g h i j k l m n o p q r
 1 I I I I C C C C C C C C C E E N N N
@@ -6417,7 +6212,6 @@ F-Austria
 G-Tuscany
 H-Parma
 I-Modena
-J-
 --Italy 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 B B I I A A A A A A A E E C C G G G
@@ -6570,7 +6364,6 @@ F-Albania
 G-Epirus
 H-Knights of Rhodes
 I-Mamluks
-J-
 --Greece 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = H E E F F D D D D D D = = =
@@ -6599,8 +6392,6 @@ E-Albania
 F-Macedonia
 G-Libya
 H-Yugoslavia
-I-
-J-
 ==Africa==
   a b c d e f g h i j k l m n o p q r
 1 = = = x x = = x = X = X X X X = X X
@@ -6647,10 +6438,10 @@ C-Aksum
 D-Meroe
 E-Himyar
 F-Sassanid
-G-Berbers-N
-H-Tuareg-N
-I-Bantu-N
-J-Khoisan-N
+G-Berbers --N
+H-Tuareg --N
+I-Bantu --N
+J-Khoisan --N
 --Africa 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = a a = = x = I = I X J J = X X
@@ -7056,12 +6847,6 @@ A-Rome
 B-Carthage
 C-Numidia
 D-Mauretania
-E-
-F-
-G-
-H-
-I-
-J-
 --North Africa 900AD--
   a b c d e f g h i j k l m n o p q r
 1 = H A A A A A = = = = I = = = F F =
@@ -7091,7 +6876,6 @@ F-Salerno
 G-Calari
 H-Asturias
 I-Logudoro
-J-
 --North Africa 1150AD--
   a b c d e f g h i j k l m n o p q r
 1 = H H C C G G = = = = K = = = D D =
@@ -7151,8 +6935,6 @@ E-Tlemcen
 F-Portugal
 G-Naples
 H-Granada
-I-
-J-
 --North Africa 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 = E E A A A A = = = = A = = = G G =
@@ -7180,9 +6962,6 @@ D-Songhai
 E-Portugal
 F-Tlemcen
 G-Naples
-H-
-I-
-J-
 --North Africa 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = F F C C C C = = = = E = = = E E =
@@ -7209,10 +6988,6 @@ C-Spain
 D-Ottoman
 E-Italy
 F-Potugal
-G-
-H-
-I-
-J-
 --North Africa 1920AD--
   a b c d e f g h i j k l m n o p q r
 1 = D D B B B B = = = = C = = = C C =
@@ -7237,12 +7012,6 @@ A-France
 B-Spain
 C-Italy
 D-Portugal
-E-
-F-
-G-
-H-
-I-
-J-
 --North Africa 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = K K D D D D = = = = F = = = F F =
@@ -7320,10 +7089,6 @@ C-Hausa
 D-Benin
 E-Wolof
 F-Portugal
-G-
-H-
-I-
-J-
 --West Africa 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = X X X X X X X X X X X X X X X X
@@ -7352,8 +7117,6 @@ E-Dendi
 F-Bornu
 G-Spain
 H-Oyo
-I-
-J-
 --West Africa 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = X X X X X X X X X X X X X X X X
@@ -7383,7 +7146,6 @@ F-France
 G-Portugal
 H-Dahomey
 I-Benin
-J-
 --West Africa 1880AD--
   a b c d e f g h i j k l m n o p q r
 1 = = X X X X X X X X X X X X X X X X
@@ -7440,10 +7202,6 @@ C-Germany
 D-Portugal
 E-Spain
 F-Liberia
-G-
-H-
-I-
-J-
 --West Africa 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = D D D D D D B B B B B B C C C C
@@ -7531,8 +7289,6 @@ E-Buganda
 F-Burundi
 G-Bunyoro
 H-Rwanda
-I-
-J-
 --Central Africa 1880AD--
   a b c d e f g h i j k l m n o p q r
 1 J J J L L X X X X B B B B B B X X X
@@ -7594,9 +7350,6 @@ D-France
 E-Germany
 F-Ethiopia
 G-Spain
-H-
-I-
-J-
 --Central Africa 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 O O E E S S C C C F F F F F L L L L
@@ -7680,12 +7433,9 @@ A-Portugal
 B-Netherlands
 C-Rozwi
 D-Mutapa
-E-Herero-N
-F-Khoisan-N
-G-Bantu-N
-H-
-I-
-J-
+E-Herero --N
+F-Khoisan --N
+G-Bantu --N
 --Southern Africa 1850AD--
   a b c d e f g h i j k l m n o p q r
 1 = = C X X X X D D X H H X X X X X C
@@ -7714,8 +7464,8 @@ E-Rozwi
 F-Zulu
 G-Swazi
 H-Kazembe
-I-Khoisan-N
-J-Herero-N
+I-Khoisan --N
+J-Herero --N
 --Southern Africa 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B B B B A A A A A A B B B B
@@ -7741,11 +7491,6 @@ B-Portugal
 C-Germany
 D-Transvaal
 E-Orange Free State
-F-
-G-
-H-
-I-
-J-
 --Southern Africa 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B B B B E E E E E H C C C C
@@ -7821,11 +7566,8 @@ B-Mutapa
 C-Buganda
 D-Zanzibar
 E-Rwanda
-F-Malagasy-N
-G-Bantu-N
-H-
-I-
-J-
+F-Malagasy --N
+G-Bantu --N
 --East Africa 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X = = = = =
@@ -7884,9 +7626,6 @@ D-Portugal
 E-Congo Free State
 F-Italy
 G-Ethiopia
-H-
-I-
-J-
 --East Africa 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 E N N N D M M M M M F F F = = = = =
@@ -7967,11 +7706,6 @@ B-Britian
 C-Italy
 D-France
 E-Ottoman
-F-
-G-
-H-
-I-
-J-
 --Horn of Africa 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 D D D = = = C C C C C C C C C C C =
@@ -7998,10 +7732,6 @@ C-Yemen
 D-Eritrea
 E-Kenya
 F-Djibouti
-G-
-H-
-I-
-J-
 ==Asia==
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8046,12 +7776,6 @@ A-Indus Valley
 B-Egypt
 C-Xia
 D-Ur
-E-
-F-
-G-
-H-
-I-
-J-
 --Asia 1200BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8079,9 +7803,6 @@ D-Hittites
 E-Assyria
 F-Babylonia
 G-Elam
-H-
-I-
-J-
 --Asia 800BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8110,8 +7831,7 @@ E-Urartu
 F-Egypt
 G-Kush
 H-Judea
-I-Xiongnu-N
-J-
+I-Xiongnu --N
 --Asia 700BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8139,9 +7859,6 @@ D-Qin
 E-Chu
 F-Yan
 G-Anshan
-H-
-I-
-J-
 --Asia 600BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8199,9 +7916,9 @@ D-Qin
 E-Chu
 F-Yan
 G-Xiongnu
-H-Scythian-N
-I-Dravidian-N
-J-Arabs-N
+H-Scythian --N
+I-Dravidian --N
+J-Arabs --N
 --Asia 330BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8227,11 +7944,6 @@ B-Persia
 C-Nanda
 D-Qin
 E-Chu
-F-
-G-
-H-
-I-
-J-
 --Asia 200BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8877,11 +8589,10 @@ B-Babylonia
 C-Egypt
 D-Hittites
 E-Elam
-F-Nairi-N
-G-Bactria-N
-H-Aramaeans-N
-I-Semetic Peoples-N
-J-
+F-Nairi --N
+G-Bactria --N
+H-Aramaeans --N
+I-Semetic Peoples --N
 --Middle East 650BC--
   a b c d e f g h i j k l m n o p q r
 1 G X X A A F F F X X = = X X X X X X
@@ -8911,7 +8622,7 @@ F-Urartu
 G-Lydia
 H-Anshan
 I-Kush
-J-Arabs-N
+J-Arabs --N
 --Middle East 550BC--
   a b c d e f g h i j k l m n o p q r
 1 D B B B B B B B B B = = X X B B B B
@@ -8937,11 +8648,7 @@ B-Persia
 C-Egypt
 D-Lydia
 E-Kush
-F-Arabs-N
-G-
-H-
-I-
-J-
+F-Arabs --N
 --Middle East 100BC--
   a b c d e f g h i j k l m n o p q r
 1 D D D J G G G G B B = = B B B B B B
@@ -8997,11 +8704,7 @@ B-Rome
 C-Kushan
 D-Meroe
 E-Aksum
-F-Arabs-N
-G-
-H-
-I-
-J-
+F-Arabs --N
 --Middle East 630AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A A A A B B = = B B B B B B
@@ -9030,8 +8733,7 @@ E-Aksum
 F-Ghassanids
 G-Makuria
 H-Alodia
-I-Arabs-N
-J-
+I-Arabs --N
 --Middle East 650AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C A A A A A A A = = B B B B B B
@@ -9058,10 +8760,6 @@ C-Byzantium
 D-Aksum
 E-Makuria
 F-Alodia
-G-
-H-
-I-
-J-
 --Middle East 900AD--
   a b c d e f g h i j k l m n o p q r
 1 D D D D D A A A A A = = B B B B B B
@@ -9088,10 +8786,7 @@ C-Egypt
 D-Byzantium
 E-Makuria
 F-Alodia
-G-Arabs-N
-H-
-I-
-J-
+G-Arabs --N
 --Middle East 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 F F F A A A A A A A = = D D D D D D
@@ -9241,7 +8936,7 @@ F-Yemen
 G-Alodia
 H-Dulkadir
 I-Venice
-J-Arabs-N
+J-Arabs --N
 --Middle East 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A A A B B E = = E E E E E E
@@ -9270,8 +8965,6 @@ E-Russia
 F-Afghanistan
 G-Italy
 H-Qatar
-I-
-J-
 --Middle East 1930AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C C C C C B B G = = G G G G G G
@@ -9763,9 +9456,6 @@ D-Sri Lanka
 E-Nepal
 F-Bhutan
 G-China
-H-
-I-
-J-
 ==Southeast Asia==
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X = = = = = = = =
@@ -9813,9 +9503,9 @@ D-Tang
 E-Magadha
 F-Champa
 G-Lavo
-H-Thai-N
-I-Malays-N
-J-Papuan-N
+H-Thai --N
+I-Malays --N
+J-Papuan --N
 --Southeast Asia 1200AD--
   a b c d e f g h i j k l m n o p q r
 1 F X X X D E E E E E = = = = = = = =
@@ -9875,7 +9565,6 @@ F-Vietnam
 G-Pegu
 H-Chiang Mai
 I-Champa
-J-
 --Southeast Asia 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 E X X X B B B B B B = = = = = = = =
@@ -10055,7 +9744,6 @@ F-Qing
 G-Japan
 H-Germany
 I-Portugal
-J-
 --Southeast Asia 1942AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B E E E E E E = = = = = = = =
@@ -10082,10 +9770,6 @@ C-Netherlands
 D-Australia
 E-China
 F-USA
-G-
-H-
-I-
-J-
 --Southeast Asia 1960AD--
   a b c d e f g h i j k l m n o p q r
 1 I I I D F F F F F F = = = = = = = =
@@ -10190,12 +9874,6 @@ A-Medes
 B-Indo-Aryan
 C-Sogdiana
 D-Bactria
-E-
-F-
-G-
-H-
-I-
-J-
 --Central Asia 200BC--
   a b c d e f g h i j k l m n o p q r
 1 = X X X X X X X X X X X X X X X X X
@@ -10220,12 +9898,6 @@ A-Parthia
 B-Seleucid
 C-Maurya
 D-Greco-Bactrian
-E-
-F-
-G-
-H-
-I-
-J-
 --Central Asia 150BC--
   a b c d e f g h i j k l m n o p q r
 1 = X X X X X X X X X X X X X X X X D
@@ -10252,10 +9924,6 @@ C-Indo-Greek
 D-Xiongnu
 E-Greco-Bactrian
 F-Sunga
-G-
-H-
-I-
-J-
 --Central Asia 80AD--
   a b c d e f g h i j k l m n o p q r
 1 = X X X X X X X X X X X X X X X X E
@@ -10282,10 +9950,6 @@ C-Han
 D-Indo-Scythians
 E-Xiongnu
 F-Indo-Parthian
-G-
-H-
-I-
-J-
 --Central Asia 600AD--
   a b c d e f g h i j k l m n o p q r
 1 = X X X X X X X X X B B B B X X X B
@@ -10313,9 +9977,6 @@ D-Sind
 E-Multan
 F-Kashmir
 G-Magadha
-H-
-I-
-J-
 --Central Asia 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 = X X X X X X X X X B B B B B B B B
@@ -10345,7 +10006,6 @@ F-Kashmir
 G-Chauhan
 H-Gahadvala
 I-Tomara
-J-
 --Central Asia 1200AD--
   a b c d e f g h i j k l m n o p q r
 1 = X X X X X X X X X C C C C X X X C
@@ -10374,8 +10034,6 @@ E-Abbasid
 F-Fars
 G-Kerman
 H-Kashmir
-I-
-J-
 --Central Asia 1220AD--
   a b c d e f g h i j k l m n o p q r
 1 = X X X X X X X X X X B B B X X X B
@@ -10400,12 +10058,6 @@ A-Khwarezm
 B-Mongol
 C-Delhi
 D-Kashmir
-E-
-F-
-G-
-H-
-I-
-J-
 --Central Asia 1300AD--
   a b c d e f g h i j k l m n o p q r
 1 = B B B B B B B B B B B B B B B B E
@@ -10432,10 +10084,6 @@ C-Chagatai
 D-Delhi
 E-Kaidu
 F-Yuan
-G-
-H-
-I-
-J-
 --Central Asia 1380AD--
   a b c d e f g h i j k l m n o p q r
 1 = C C C C C C C C C C C C C C C C B
@@ -10493,10 +10141,6 @@ C-Tibet
 D-Kashmir
 E-Sind
 F-Jaunpur
-G-
-H-
-I-
-J-
 --Central Asia 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 = B B B B B B B B B B B B B B B B B
@@ -10558,7 +10202,6 @@ F-Khiva
 G-Tibet
 H-Ladakh
 I-Mongol
-J-
 --Central Asia 1700AD--
   a b c d e f g h i j k l m n o p q r
 1 = C C C C C C C C C C C C C C C C D
@@ -10587,8 +10230,6 @@ E-Bukhara
 F-Khiva
 G-Khoshut
 H-Ladakh
-I-
-J-
 --Central Asia 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = D D D D D D D D D G G G G D D D C
@@ -10646,11 +10287,6 @@ B-Persia
 C-Britian
 D-Russia
 E-Qing
-F-
-G-
-H-
-I-
-J-
 --Central Asia 1950AD--
   a b c d e f g h i j k l m n o p q r
 1 = D D D D D D D D D D D D D D D D D
@@ -10677,10 +10313,6 @@ C-Iran
 D-USSR
 E-Pakistan
 F-China
-G-
-H-
-I-
-J-
 --Central Asia 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = C C C C C C C C C C C C C C C C C
@@ -10754,13 +10386,6 @@ J-Tajikistan
 A-Sumer
 B-Egypt
 C-Ebla
-D-
-E-
-F-
-G-
-H-
-I-
-J-
 --Levant 2200BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X C X X X X X X X X X
@@ -10783,14 +10408,7 @@ J-
 18B X X = = X X X X X X X X X X X X X
 A-Akkad
 B-Egypt
-C-Amorite-N
-D-
-E-
-F-
-G-
-H-
-I-
-J-
+C-Amorite --N
 --Levant 1200BC--
   a b c d e f g h i j k l m n o p q r
 1 X X D D D D D D D D A A A X X X X X
@@ -10816,11 +10434,7 @@ B-Babylonia
 C-Egypt
 D-Hittites
 E-Carchemish
-F-Aramaeans-N
-G-
-H-
-I-
-J-
+F-Aramaeans --N
 --Levant 1000BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -10849,8 +10463,6 @@ E-Egypt
 F-Carchemish
 G-Phoenicia
 H-Tyre
-I-
-J-
 --Levant 750BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X A A E E E E E E E
@@ -10907,12 +10519,6 @@ A-Assyria
 B-Phrygia
 C-Egypt
 D-Urartu
-E-
-F-
-G-
-H-
-I-
-J-
 --Levant 600BC--
   a b c d e f g h i j k l m n o p q r
 1 D D D D X A A A A A A A A E E E E E
@@ -10939,10 +10545,6 @@ C-Egypt
 D-Lydia
 E-Urartu
 F-Tyre
-G-
-H-
-I-
-J-
 --Levant 100BC--
   a b c d e f g h i j k l m n o p q r
 1 G G G G G G G J J J A H H H H C C C
@@ -10999,10 +10601,6 @@ C-Rome
 D-Egypt
 E-Judea
 F-Nabatea
-G-
-H-
-I-
-J-
 --Levant 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 J J J J J J J E E E E A A A A A A A
@@ -11092,9 +10690,6 @@ D-Cilicia
 E-Jerusalem
 F-Tripoli
 G-Antioch
-H-
-I-
-J-
 --Levant 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C C C D D D D D B B B B B B B B
@@ -11120,11 +10715,6 @@ B-Ak Koyunlu
 C-Ottoman
 D-Dulkadir
 E-Venice
-F-
-G-
-H-
-I-
-J-
 --Levant 1920AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C C C C C C C C C C C C C C G G
@@ -11152,9 +10742,6 @@ D-Hejaz
 E-Saudi
 F-Hail
 G-Persia
-H-
-I-
-J-
 --Levant 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 E E E E E E E E E E E E E E E E J J
@@ -11233,8 +10820,8 @@ E-Judea
 F-Israel
 G-Phoenicia
 H-Aramaeans
-I-Arabs-N
-J-Ethiopian-N
+I-Arabs --N
+J-Ethiopian --N
 --Arabian Penninsula 100BC--
   a b c d e f g h i j k l m n o p q r
 1 = = G F X X X F C C C C C C C C C C
@@ -11263,8 +10850,8 @@ E-Nabatea
 F-Seleucid
 G-Judea
 H-Meroe
-I-Arabs-N
-J-Ethiopian-N
+I-Arabs --N
+J-Ethiopian --N
 --Arabian Penninsula 200AD--
   a b c d e f g h i j k l m n o p q r
 1 = = D D D X X E E E E E E E E E E E
@@ -11291,10 +10878,7 @@ C-Aksum
 D-Rome
 E-Parthia
 F-Meroe
-G-Arabs-N
-H-
-I-
-J-
+G-Arabs --N
 --Arabian Penninsula 600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B E D D A A A A A A A A A A
@@ -11324,7 +10908,7 @@ F-Mecca
 G-Nobatia
 H-Makuria
 I-Alodia
-J-Arabs-N
+J-Arabs --N
 --Arabian Penninsula 630AD--
   a b c d e f g h i j k l m n o p q r
 1 = = E E E F C C C C C C C C C C C C
@@ -11354,7 +10938,7 @@ F-Ghassanids
 G-Nobatia
 H-Makuria
 I-Alodia
-J-Arabs-N
+J-Arabs --N
 --Arabian Penninsula 1150AD--
   a b c d e f g h i j k l m n o p q r
 1 = = H A X X X D D D D D D D D I I I
@@ -11386,7 +10970,7 @@ H-Jerusalem
 I-Khorasan
 J-Makuria
 K-Alodia
-L-Arabs-N
+L-Arabs --N
 --Arabian Penninsula 1200AD--
   a b c d e f g h i j k l m n o p q r
 1 = = J A X X X B B B B B B B B X X X
@@ -11417,7 +11001,7 @@ G-Ghurid
 H-Makuria
 I-Alodia
 J-Jerusalem
-K-Arabs-N
+K-Arabs --N
 --Arabian Penninsula 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 = = A A X X X D D D D D D D D D H H
@@ -11446,8 +11030,7 @@ E-Ethiopia
 F-Adal
 G-Alodia
 H-Timurid
-I-Arabs-N
-J-
+I-Arabs --N
 --Arabian Penninsula 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B X X A B B B E E E E E E E E
@@ -11475,9 +11058,6 @@ D-Oman
 E-Persia
 F-Ethiopia
 G-Sennar
-H-
-I-
-J-
 --Arabian Penninsula 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B X X X B B B E E E E E E E E
@@ -11506,8 +11086,6 @@ E-Persia
 F-Ethiopia
 G-Italy
 H-France
-I-
-J-
 --Arabian Penninsula 1920AD--
   a b c d e f g h i j k l m n o p q r
 1 = = J J J F F F F F G G G G G G G G
@@ -11623,8 +11201,6 @@ E-Bosporus
 F-Pontus
 G-Seleucid
 H-Thrace
-I-
-J-
 --Caucasus 660AD--
   a b c d e f g h i j k l m n o p q r
 1 D = = D D D A A A A A A A A A X X X
@@ -11649,12 +11225,6 @@ A-Khazars
 B-Caliphate
 C-Byzantium
 D-Bulgaria
-E-
-F-
-G-
-H-
-I-
-J-
 --Caucasus 900AD--
   a b c d e f g h i j k l m n o p q r
 1 X = = C C C C C C C C C C C C C C C
@@ -11680,11 +11250,6 @@ B-Abkhazia
 C-Khazars
 D-Abbasid
 E-Byzantium
-F-
-G-
-H-
-I-
-J-
 --Caucasus 960AD--
   a b c d e f g h i j k l m n o p q r
 1 X = = D D D D D D D D D D D D D D D
@@ -11713,8 +11278,6 @@ E-Buyid
 F-Byzantium
 G-Mosul
 H-Aleppo
-I-
-J-
 --Caucasus 1150AD--
   a b c d e f g h i j k l m n o p q r
 1 H = = X X X X X X X X X X X X X X X
@@ -11743,8 +11306,6 @@ E-Rum
 F-Byzantium
 G-Mosul
 H-Cuman
-I-
-J-
 --Caucasus 1240AD--
   a b c d e f g h i j k l m n o p q r
 1 B = = B B B B B B B B B B B B B B B
@@ -11770,11 +11331,6 @@ B-Mongol
 C-Rum
 D-Trabzon
 E-Ayyubid
-F-
-G-
-H-
-I-
-J-
 --Caucasus 1350AD--
   a b c d e f g h i j k l m n o p q r
 1 D = = D D D D D D D D D D D D D D D
@@ -11804,7 +11360,6 @@ F-Trabzon
 G-Jalayirids
 H-Dulkadir
 I-Kastamonu
-J-
 --Caucasus 1750AD--
   a b c d e f g h i j k l m n o p q r
 1 C = = C C C D D D D D D D D D D D D
@@ -11829,12 +11384,6 @@ A-Georgia
 B-Azerbaijan
 C-Ottoman
 D-Russia
-E-
-F-
-G-
-H-
-I-
-J-
 --Caucasus 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 H = = D D D D D D D D D D D D D G G
@@ -11863,8 +11412,6 @@ E-Turkey
 F-Iran
 G-Kazakhstan
 H-Ukraine
-I-
-J-
 ==Iran==
   a b c d e f g h i j k l m n o p q r
 1 X X X X X = = = = = = X X X X X X X
@@ -11910,11 +11457,6 @@ B-Anshan
 C-Assyria
 D-Medes
 E-Urartu
-F-
-G-
-H-
-I-
-J-
 --Iran 1200AD--
   a b c d e f g h i j k l m n o p q r
 1 D D D D D = = = = = = B B B B B B B
@@ -11942,9 +11484,6 @@ D-Azerbaijan
 E-Ayyubid
 F-Kerman
 G-Fars
-H-
-I-
-J-
 --Iran 1230AD--
   a b c d e f g h i j k l m n o p q r
 1 D D D D D = = = = = = B B B B B B B
@@ -11970,11 +11509,6 @@ B-Mongols
 C-Abbasid
 D-Azerbaijan
 E-Ayyubid
-F-
-G-
-H-
-I-
-J-
 --Iran 1350AD--
   a b c d e f g h i j k l m n o p q r
 1 E E E E E = = = = = = C C C C C C C
@@ -12002,9 +11536,6 @@ D-Injuids
 E-Chupanids
 F-Muzaffarid
 G-Mazanderan
-H-
-I-
-J-
 --Iran 1790AD--
   a b c d e f g h i j k l m n o p q r
 1 E E E E E = = = = = = D D D A A A A
@@ -12031,10 +11562,6 @@ C-Zand
 D-Qajar
 E-Azerbaijan
 F-Saudi
-G-
-H-
-I-
-J-
 --Iran 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A = = = = = = E A A A A E E
@@ -12060,11 +11587,6 @@ B-Iraq
 C-Saudi Arabia
 D-Kuwait
 E-Turkmenistan
-F-
-G-
-H-
-I-
-J-
 ==Turkey==
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X = X X = = X X X X X X
@@ -12488,10 +12010,10 @@ B-Parthia
 C-Bosporus
 D-Nabatea
 E-Thrace
-F-Dacians-N
-G-Alans-N
-H-Arabs-N
-I-Libyans-N
+F-Dacians --N
+G-Alans --N
+H-Arabs --N
+I-Libyans --N
 --Turkey 700AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C C C C C = D D = = D D D D D D
@@ -13079,7 +12601,6 @@ K-Bulgaria
 L-United Kingdom
 M-Syria
 N-Jordan
-
 O-Israel
 P-Albania
 Q-Lebanon
@@ -13170,12 +12691,9 @@ A-Funan
 B-Champa
 C-Han
 D-Satavahana
-E-Mon-Khmer-N
-F-Thai-N
-G-Malays-N
-H-
-I-
-J-
+E-Mon-Khmer --N
+F-Thai --N
+G-Malays --N
 --Siam 600AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X D D D D
@@ -13203,9 +12721,9 @@ D-Sui
 E-Kamarupa
 F-Magadha
 G-Kongoda
-H-Mon-Khmer-N
-I-Thai-N
-J-Malays-N
+H-Mon-Khmer --N
+I-Thai --N
+J-Malays --N
 --Siam 700AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X D D X X X X D D D D
@@ -13233,9 +12751,9 @@ D-Tang
 E-Kamarupa
 F-Magadha
 G-Gauda
-H-Mon-Khmer-N
-I-Thai-N
-J-Malays-N
+H-Mon-Khmer --N
+I-Thai --N
+J-Malays --N
 --Siam 750AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X B H H X X X X H H H H
@@ -13358,7 +12876,7 @@ F-Champa
 G-Srivijaya
 H-Song
 I-Bengal
-J-Malays-N
+J-Malays --N
 --Siam 1300AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X G G G G G G G G G G G
@@ -13388,7 +12906,7 @@ F-Champa
 G-Yuan
 H-Delhi
 I-Assam
-J-Malays-N
+J-Malays --N
 --Siam 1380AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X C C C J J J J J J J J
@@ -13626,9 +13144,6 @@ D-Qing
 E-Dutch East Indies
 F-Bhutan
 G-Nepal
-H-
-I-
-J-
 --Siam 1941AD--
   a b c d e f g h i j k l m n o p q r
 1 F E E B B B B D D D D D D D D D D D
@@ -13656,9 +13171,6 @@ D-Republic of China
 E-Bhutan
 F-Nepal
 G-Dutch East Indies
-H-
-I-
-J-
 --Siam 1960AD--
   a b c d e f g h i j k l m n o p q r
 1 N J J H H B B G G G G G G G G G G G
@@ -13770,9 +13282,9 @@ A-Srivijaya
 B-Mataram
 C-Chenla
 D-Lavo
-E-Malays-N
-F-Papuas-N
-G-Australians-N
+E-Malays --N
+F-Papuas --N
+G-Australians --N
 --Indonesia 1250AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -13800,9 +13312,9 @@ D-Srivijaya
 E-Panjalu
 F-Janggala
 G-Khmer
-H-Malays-N
-I-Papuas-N
-J-Australians-N
+H-Malays --N
+I-Papuas --N
+J-Australians --N
 --Indonesia 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -13831,8 +13343,8 @@ E-Bacan
 F-Jailolo
 G-Ayutthaya
 H-Cambodia
-I-Malays-N
-J-Papuas-N
+I-Malays --N
+J-Papuas --N
 --Indonesia 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -13969,7 +13481,7 @@ F-United Kingdom
 G-Spanish Philippines
 H-Siam
 I-French Indochina
-J-Papuas-N
+J-Papuas --N
 --Indonesia 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -14068,7 +13580,7 @@ J-Australia
 18= = B B B B = = = = = = = = = = = =
 A-Maguindanao
 B-Sulu
-C-Malays-N
+C-Malays --N
 --Philippines 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = A A A = = = = = = = =
@@ -14635,16 +14147,16 @@ F-Mongolia
 16= = = = = = = = = = = = = X X X x x
 17= = = = = = = = = = = = x x x x x x
 18= = = = = = X X = = = X X x x X = =
-A-Goguryeo-Korean
-B-Mahan-Korean
-C-Ye-Korean
-D-Dongokjeo-Korean
-E-Jinhan-Korean
-F-Byeonhan-Korean
-G-Dongye-Korean
+A-Goguryeo --Korean
+B-Mahan --Korean
+C-Ye --Korean
+D-Dongokjeo --Korean
+E-Jinhan --Korean
+F-Byeonhan --Korean
+G-Dongye --Korean
 H-Han
-I-Buyeo-N-Korean
-J-Xianbei-N
+I-Buyeo --N --Korean
+J-Xianbei --N
 --Korea 200AD--
   a b c d e f g h i j k l m n o p q r
 1 E E X X X X X G X X X X X = = = = =
@@ -14665,13 +14177,13 @@ J-Xianbei-N
 16= = = = = = = = = = = = = F F F f f
 17= = = = = = = = = = = = f f f f f f
 18= = = = = = C C = = = F F f f F = =
-A-Silla-Korean
-B-Goguryeo-Korean
-C-Baekje-Korean
-D-Gaya-Korean
+A-Silla --Korean
+B-Goguryeo --Korean
+C-Baekje --Korean
+D-Gaya --Korean
 E-Han
 F-Japan
-G-Buyeo-N-Korean
+G-Buyeo --N --Korean
 --Korea 800AD--
   a b c d e f g h i j k l m n o p q r
 1 E E E E A A A A A A A A A = = = = =
@@ -14732,7 +14244,7 @@ D-Jin
 7 c = = = = A A A = = = = = = = = = =
 8 = = = = = A A A A = = = = = = = = =
 9 = = = = A A A A A = = = = = = = = =
-10= = = = A A A A A = = = = = = = =
+10= = = = A A A A A = = = = = = = = =
 11C C = = = = = A A A A = = = = = = =
 12= = = = = = A A A A A = = = = = = =
 13= = = = = = = A A A A = = = = = = =
@@ -14770,6 +14282,25 @@ C-China
 D-Japan
 E-Russia
 ==Japan==
+  a b c d e f g h i j k l m n o p q r
+1 X X X X X X X X X X X = = X X = = =
+2 X X X X X X X X X X X = = = = = = =
+3 X X X X X X X X X X = = = X X = = =
+4 X X X X X X X X X = = = = X X X = =
+5 X X X X X X = = = = = = X X X X = =
+6 X X X X X = = = = = = = x = = = = =
+7 X X X X X = = = = = = = x x = = = =
+8 X X X X = = = = = = = = X X = = = =
+9 = = X X = = = = = = = = X X = = = =
+10= = X X X = = = = = = X X = = = = =
+11= = X X X = = = = = X X X = = = = =
+12= = = X X = = = = X X X X = = = = =
+13= = X X = = X X X X X = = = = = = =
+14= = X = = X X X X X = = = = = = = =
+15= = = = = X X = = = = = = = = = = =
+16= = = = = X = = = = = = = = = = = =
+17= = = = = = = = = = = = = = = = = =
+18= = = = = = = = = = = = = = = = = =
 --Japan 600AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X = = X X = = =
@@ -14791,7 +14322,7 @@ E-Russia
 17= = = = = = = = = = = = = = = = = =
 18= = = = = = = = = = = = = = = = = =
 A-Japan
-B-Ainu-N
+B-Ainu --N
 C-Goguryeo
 D-Silla
 E-Baekje
@@ -14856,7 +14387,7 @@ S-Ashina
 17= = = = = = = = = = = = = = = = = =
 18= = = = = = = = = = = = = = = = = =
 A-Japan
-B-Ainu-N
+B-Ainu --N
 C-Joseon
 D-Qing
 --Japan 2000AD--
@@ -15025,8 +14556,6 @@ F-Bukhara
 G-Nogai
 H-Ottoman Empire
 I-Joseon
-
-
 --Russia 1690AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = = = = = = =
@@ -15084,4 +14613,3 @@ F-Turkmenistan
 G-Kyrgyzstan
 H-Georgia
 I-North Korea
-

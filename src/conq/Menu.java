@@ -57,7 +57,7 @@ public class Menu {
         loader.locations.get(ans).disMap();
         System.out.println();
         System.out.println(question);
-        System.out.println("Enter y to confirm");
+        System.out.println("Enter y to confirm or q to return to mainmenu");
         System.out.println("===================");
         System.out.println(((ans > 0) ? "" : "\u001B[30m") + "< z  " + "\u001B[0m" + loader.locations.get(ans).name + ((ans < loader.locations.size() - 1) ? "" : "\u001B[30m") + "  x >" + "\u001B[0m");
         System.out.println("===================");
@@ -69,6 +69,8 @@ public class Menu {
                 ans++;
             else if(input == 'y')
                 chosen = true;
+            else if(input == 'q')
+                return -1;
         }catch(IOException ex){
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -84,7 +86,7 @@ public class Menu {
         loader.locations.get(loc).maps.get(ans).disMap();
         System.out.println();
         System.out.println(question);
-        System.out.println("Enter y to confirm");
+        System.out.println("Enter y to confirm or q to return to mainmenu");
         System.out.println(loader.locations.get(loc).name);
         System.out.println("===================");
         System.out.println(((ans > 0) ? "" : "\u001B[30m") + "< z  " + "\u001B[0m" + loader.locations.get(loc).maps.get(ans).year 
@@ -98,6 +100,8 @@ public class Menu {
                 ans++;
             else if(input == 'y')
                 chosen = true;
+            else if(input == 'q')
+                return -1;
         }catch(IOException ex){
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -113,7 +117,7 @@ public class Menu {
         loader.locations.get(loc).maps.get(time).disMapCiv(ans);
         System.out.println();
         System.out.println(question);
-        System.out.println("Enter y to confirm");
+        System.out.println("Enter y to confirm or q to return to mainmenu");
         System.out.println(loader.locations.get(loc).name + " in " +
             loader.locations.get(loc).maps.get(time).year + 
             ((loader.locations.get(loc).maps.get(time).era)
@@ -121,6 +125,11 @@ public class Menu {
         System.out.println("===================");
         System.out.println(((ans > 0) ? "" : "\u001B[30m") + "< z  " + "\u001B[0m" + loader.locations.get(loc).maps.get(time).civs.get(ans).name + ((ans < loader.locations.get(loc).maps.get(time).civs.size() - 1) ? "" : "\u001B[30m") + "  x >" + "\u001B[0m");
         System.out.println("===================");
+        System.out.print("Attributes:");
+        for(int i = 0; i < loader.locations.get(loc).maps.get(time).civs.get(ans).attr.size(); i++){
+            System.out.print(" " + loader.locations.get(loc).maps.get(time).civs.get(ans).attr.get(i));
+        }
+        System.out.println();
         try {
             int input = System.in.read();
             if(input == 'z' && ans > 0)
@@ -129,6 +138,8 @@ public class Menu {
                 ans++;
             else if(input == 'y')
                 chosen = true;
+            else if(input == 'q')
+                return -1;
         }catch(IOException ex){
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
