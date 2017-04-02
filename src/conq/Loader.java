@@ -23,13 +23,13 @@ class lLoc{
         for(int i = 0; i < 18; i++){
             for(int j = 0; j < 18; j++){
                 if(phyMap[i][j] == '=')
-                    System.out.print(c.CYAN + c.BBLUE + phyMap[i][j] + c.RESET);
+                    System.out.print(c.CYAN + c.BBLUE + phyMap[i][j] + " "  + c.RESET);
                 else if(phyMap[i][j] == 'x')
-                    System.out.print(c.GREEN + c.BCYAN + phyMap[i][j] + c.RESET);
+                    System.out.print(c.GREEN + c.BCYAN + phyMap[i][j] + " " + c.RESET);
                 else if(phyMap[i][j] == '0')
-                    System.out.print(c.BLACK + c.BBLACK + phyMap[i][j] + c.RESET);
+                    System.out.print(c.BLACK + c.BBLACK + phyMap[i][j] + " "  + c.RESET);
                 else
-                    System.out.print(c.GREEN + c.BGREEN + phyMap[i][j] + c.RESET);
+                    System.out.print(c.GREEN + c.BGREEN + phyMap[i][j] + " "  + c.RESET);
             }
             System.out.print("\n");
         }
@@ -48,15 +48,15 @@ class lMap{
         for(int i = 0; i < 18; i++){
             for(int j = 0; j < 18; j++){
                 if(map[i][j] == '=')
-                    System.out.print(c.BLUE + map[i][j] + c.RESET);
+                    System.out.print(c.BLUE + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == 'x')
-                    System.out.print(c.CYAN + map[i][j] + c.RESET);
+                    System.out.print(c.CYAN + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == 'X')
-                    System.out.print(c.GREEN + map[i][j] + c.RESET);
+                    System.out.print(c.GREEN + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == '0')
-                    System.out.print(c.BLACK + c.BBLACK + map[i][j] + c.RESET);
+                    System.out.print(c.BLACK + c.BBLACK + map[i][j] + " "  + c.RESET);
                 else
-                    System.out.print(c.WHITE + map[i][j] + c.RESET);
+                    System.out.print(c.WHITE + map[i][j] + " "  + c.RESET);
             }
             System.out.print("\n");
         }
@@ -67,18 +67,18 @@ class lMap{
         for(int i = 0; i < 18; i++){
             for(int j = 0; j < 18; j++){
                 if(map[i][j] == '=')
-                    System.out.print(c.BLUE + map[i][j] + c.RESET);
+                    System.out.print(c.BLUE + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == 'x')
-                    System.out.print(c.CYAN + map[i][j] + c.RESET);
+                    System.out.print(c.CYAN + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == 'X')
-                    System.out.print(c.GREEN + map[i][j] + c.RESET);
+                    System.out.print(c.GREEN + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == '0')
-                    System.out.print(c.BLACK + c.BBLACK + map[i][j] + c.RESET);
+                    System.out.print(c.BLACK + c.BBLACK + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == civs.get(civ).sym 
                     || map[i][j] == Character.toLowerCase(civs.get(civ).sym))
-                    System.out.print(c.RED + map[i][j] + c.RESET);
+                    System.out.print(c.RED + map[i][j] + " "  + c.RESET);
                 else
-                    System.out.print(c.PURPLE + map[i][j] + c.RESET);
+                    System.out.print(c.PURPLE + map[i][j] + " "  + c.RESET);
             }
             System.out.print("\n");
         }
