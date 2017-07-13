@@ -42,13 +42,13 @@
 A-Egypt
 B-Sumer
 C-Minoans
-D-Nubians --N
-E-Ethiopians --N
-F-Europeans --N
-G-Indo-europeans --N
-H-Indus Valley Civilization --N
-I-Longshan Culture --N
-J-Jomon Culture --N
+D-Nubians --Tribal
+E-Ethiopians --Tribal
+F-Europeans --Tribal
+G-Indo-europeans --Tribal
+H-Indus Valley Civilization --Tribal
+I-Longshan Culture --Tribal
+J-Jomon Culture --Tribal
 --World 2000BC--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -74,11 +74,11 @@ B-Ur
 C-Indus Valley Civilization
 D-Xia
 E-Minoans
-F-Europeans --N
-G-Indo-europeans --N
-H-Nubians --N
-I-Ethiopians --N
-J-Jomon Culture --N
+F-Europeans --Tribal
+G-Indo-europeans --Tribal
+H-Nubians --Tribal
+I-Ethiopians --Tribal
+J-Jomon Culture --Tribal
 --World 500BC--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -107,8 +107,8 @@ E-Carthage
 F-Mayans
 G-Kush
 H-Saba
-I-Celts --N
-J-Scythians --N
+I-Celts --Tribal
+J-Scythians --Tribal
 --World 0AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -138,7 +138,7 @@ F-Tocharians
 G-Indo-Scythians
 H-Meroe
 I-Himyar
-J-Picts --N
+J-Picts --Tribal
 --World 500AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -435,14 +435,14 @@ J-South Africa
 18= = = = = = = = = = = = X X X X X =
 A-Aztec
 B-Spain
-C-Cree --N
-D-Crow --N
-E-Apache --N
-F-Paiute --N
-G-Shawnee --N
-H-Seminole --N
-I-Ottawa --N
-J-Pawnee --N
+C-Cree --Tribal
+D-Crow --Tribal
+E-Apache --Tribal
+F-Paiute --Tribal
+G-Shawnee --Tribal
+H-Seminole --Tribal
+I-Ottawa --Tribal
+J-Pawnee --Tribal
 --North America 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X = = X X X = = X X
@@ -464,15 +464,15 @@ J-Pawnee --N
 17= = = = = = = = = = = A A = = = = =
 18= = = = = = = = = = = = A A X H X =
 A-Spain
-B-Iroquois --N
-C-Shawnee --N
-D-Apache --N
-E-Navajo --N
-F-Crow --N
-G-Blackfoot --N
-H-Carib --N
-I-Cree --N
-J-Eskimos --N
+B-Iroquois --Tribal
+C-Shawnee --Tribal
+D-Apache --Tribal
+E-Navajo --Tribal
+F-Crow --Tribal
+G-Blackfoot --Tribal
+H-Carib --Tribal
+I-Cree --Tribal
+J-Eskimos --Tribal
 --North America 1700AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X = = X X X = = X X
@@ -497,12 +497,12 @@ A-Britian
 B-France
 C-Spain
 D-Netherlands
-E-Cherokee --N
-F-Sioux --N
-G-Apache --N
-H-Cree --N
-I-Cheyenne --N
-J-Blackfoot --N
+E-Cherokee --Tribal
+F-Sioux --Tribal
+G-Apache --Tribal
+H-Cree --Tribal
+I-Cheyenne --Tribal
+J-Blackfoot --Tribal
 --North America 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X = = X X X = = X X
@@ -529,10 +529,10 @@ C-Spain
 D-Russia
 E-Denmark
 F-France
-G-Ktunaxa --N
-H-Eskimos --N
-I-T'atsaot'ine --N
-J-Chilcotin --N
+G-Ktunaxa --Tribal
+H-Eskimos --Tribal
+I-T'atsaot'ine --Tribal
+J-Chilcotin --Tribal
 --North America 1837AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = B B B = = B B B = = X X
@@ -698,7 +698,7 @@ B-Britian
 C-France
 D-Netherlands
 E-Denmark
-F-Carib --N
+F-Carib --Tribal
 --Caribbean Sea 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = A = = = = = = = = = = = = = = =
@@ -914,19 +914,19 @@ J-Colombia
 16= = = = = X X X X X B X X B X C = =
 17= = = = = M X I X X G F X X = = = =
 18= = = = = X X X X H X X E X X = = =
-A-Eskimos --N
-B-Cree --N
-C-Beothuk --N
-D-Naskapi --N
-E-Huron --N
-F-Algonquian --N
-G-Ojibwe --N
-H-Crow --N
-I-Blackfoot --N
-J-Tlingit --N
-K-T'atsaot'ine --N
-L-Athabascan --N
-M-Chilcotin --N
+A-Eskimos --Tribal
+B-Cree --Tribal
+C-Beothuk --Tribal
+D-Naskapi --Tribal
+E-Huron --Tribal
+F-Algonquian --Tribal
+G-Ojibwe --Tribal
+H-Crow --Tribal
+I-Blackfoot --Tribal
+J-Tlingit --Tribal
+K-T'atsaot'ine --Tribal
+L-Athabascan --Tribal
+M-Chilcotin --Tribal
 --Canada 1760AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = X X X = X X X
@@ -950,15 +950,15 @@ M-Chilcotin --N
 A-Britian
 B-France
 C-Denmark
-D-Eskimos --N
-E-Cree --N
-F-T'atsaot'ine --N
-G-Athabascan --N
-H-Tlingit --N
-I-Crow --N
-J-Sioux --N
-K-Ktunaxa --N
-L-Chilcotin --N
+D-Eskimos --Tribal
+E-Cree --Tribal
+F-T'atsaot'ine --Tribal
+G-Athabascan --Tribal
+H-Tlingit --Tribal
+I-Crow --Tribal
+J-Sioux --Tribal
+K-Ktunaxa --Tribal
+L-Chilcotin --Tribal
 --Canada 1870AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = A A A = X X X
@@ -983,7 +983,7 @@ A-Britian
 B-USA
 C-Canada
 D-Denmark
-E-Eskimos --N
+E-Eskimos --Tribal
 --Canada 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = A A A = X X X
@@ -1008,7 +1008,7 @@ A-Canada
 B-USA
 C-Britian
 D-Denmark
-E-Eskimos --N
+E-Eskimos --Tribal
 --Canada 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = A A A = C C C
@@ -1074,29 +1074,29 @@ C-Denmark
 18= = = = = = X A A = = X = = = = B =
 A-Aztec
 B-Spain
-C-Cree --N
-D-Chilcotin --N
-E-Blackfoot --N
-F-Algonquian --N
-G-Ktunaxa --N
-H-Ojibwe --N
-I-Crow --N
-J-Sioux --N
-K-Ottawa --N
-L-Huron --N
-M-Iroquois --N
-N-Shoshone --N
-O-Cheyenne --N
-P-Pawnee --N
-Q-Paiute --N
-R-Navajo --N
-S-Comanche --N
-T-Shawnee --N
-U-Cherokkee --N
-V-Apache --N
-W-Choctaw --N
-Y-Seminole --N
-Z-Huastec --N
+C-Cree --Tribal
+D-Chilcotin --Tribal
+E-Blackfoot --Tribal
+F-Algonquian --Tribal
+G-Ktunaxa --Tribal
+H-Ojibwe --Tribal
+I-Crow --Tribal
+J-Sioux --Tribal
+K-Ottawa --Tribal
+L-Huron --Tribal
+M-Iroquois --Tribal
+N-Shoshone --Tribal
+O-Cheyenne --Tribal
+P-Pawnee --Tribal
+Q-Paiute --Tribal
+R-Navajo --Tribal
+S-Comanche --Tribal
+T-Shawnee --Tribal
+U-Cherokkee --Tribal
+V-Apache --Tribal
+W-Choctaw --Tribal
+Y-Seminole --Tribal
+Z-Huastec --Tribal
 --USA 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X = = = X X X
@@ -1118,28 +1118,28 @@ Z-Huastec --N
 17= = = = = = A A A = = = = A A a = =
 18= = = = = = A A A = = A = = = = A =
 A-Spain
-B-Cree --N
-C-Chilcotin --N
-D-Blackfoot --N
-E-Algonquian --N
-F-Ktunaxa --N
-G-Ojibwe --N
-H-Huron --N
-I-Crow --N
-J-Sioux --N
-K-Ottawa --N
-L-Iroquois --N
-M-Shoshone --N
-N-Cheyenne --N
-O-Pawnee --N
-P-Paiute --N
-Q-Navajo --N
-R-Comanche --N
-S-Shawnee --N
-T-Cherokee --N
-U-Apache --N
-V-Choctaw --N
-W-Huastec --N
+B-Cree --Tribal
+C-Chilcotin --Tribal
+D-Blackfoot --Tribal
+E-Algonquian --Tribal
+F-Ktunaxa --Tribal
+G-Ojibwe --Tribal
+H-Huron --Tribal
+I-Crow --Tribal
+J-Sioux --Tribal
+K-Ottawa --Tribal
+L-Iroquois --Tribal
+M-Shoshone --Tribal
+N-Cheyenne --Tribal
+O-Pawnee --Tribal
+P-Paiute --Tribal
+Q-Navajo --Tribal
+R-Comanche --Tribal
+S-Shawnee --Tribal
+T-Cherokee --Tribal
+U-Apache --Tribal
+V-Choctaw --Tribal
+W-Huastec --Tribal
 --USA 1650AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X = = = X X X
@@ -1165,28 +1165,28 @@ B-France
 C-Spain
 D-Netherlands
 E-Sweden
-F-Cree --N
-G-Chilcotin --N
-H-Blackfoot --N
-I-Algonquian --N
-J-Ojibwe --N
-K-Ktunaxa --N
-L-Huron --N
-M-Ottawa --N
-N-Crow --N
-O-Sioux --N
-P-Cheyenne --N
-Q-Shoshone --N
-R-Pawnee --N
-S-Iroquois --N
-T-Paiute --N
-U-Shawnee --N
-V-Navajo --N
-W-Comanche --N
-Y-Cherokee --N
-Z-Apache --N
-!-Choctaw --N
-@-Huastec --N
+F-Cree --Tribal
+G-Chilcotin --Tribal
+H-Blackfoot --Tribal
+I-Algonquian --Tribal
+J-Ojibwe --Tribal
+K-Ktunaxa --Tribal
+L-Huron --Tribal
+M-Ottawa --Tribal
+N-Crow --Tribal
+O-Sioux --Tribal
+P-Cheyenne --Tribal
+Q-Shoshone --Tribal
+R-Pawnee --Tribal
+S-Iroquois --Tribal
+T-Paiute --Tribal
+U-Shawnee --Tribal
+V-Navajo --Tribal
+W-Comanche --Tribal
+Y-Cherokee --Tribal
+Z-Apache --Tribal
+!-Choctaw --Tribal
+@-Huastec --Tribal
 --USA 1700AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X A A = = = X X X
@@ -1216,21 +1216,21 @@ F-Iroquois
 G-Ottawa
 H-Shawnee
 I-Choctaw
-J-Sioux --N
-K-Apache --N
-L-Comanche --N
-M-Pawnee --N
-N-Cheyenne --N
-O-Crow --N
-P-Blackfoot --N
-Q-Navajo --N
-R-Shoshone --N
-S-Paiute --N
-T-Ktunaxa --N
-U-Chilcotin --N
-V-Algonquian --N
-W-Huastec --N
-Y-Ojibwe --N
+J-Sioux --Tribal
+K-Apache --Tribal
+L-Comanche --Tribal
+M-Pawnee --Tribal
+N-Cheyenne --Tribal
+O-Crow --Tribal
+P-Blackfoot --Tribal
+Q-Navajo --Tribal
+R-Shoshone --Tribal
+S-Paiute --Tribal
+T-Ktunaxa --Tribal
+U-Chilcotin --Tribal
+V-Algonquian --Tribal
+W-Huastec --Tribal
+Y-Ojibwe --Tribal
 --USA 1801AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B B B B B B B B B = = = B B B
@@ -1255,8 +1255,8 @@ A-USA
 B-Britian
 C-Spain
 D-France
-E-Chilcotin --N
-F-Ktunaxa --N
+E-Chilcotin --Tribal
+F-Ktunaxa --Tribal
 --USA 1810AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B B B B B B B B B = = = B B B
@@ -1280,8 +1280,8 @@ F-Ktunaxa --N
 A-USA
 B-Britian
 C-Spain
-D-Ktunaxa --N
-E-Chilcotin --N
+D-Ktunaxa --Tribal
+E-Chilcotin --Tribal
 --USA 1840AD--
   a b c d e f g h i j k l m n o p q r
 1 B B B B B B B B B B B B = = = B B B
@@ -1308,7 +1308,7 @@ C-Mexico
 D-Texas
 E-Spain
 F-Haiti
-G-Ktunaxa --N
+G-Ktunaxa --Tribal
 --USA 1865AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C C C C C C C C C C = = = C C C
@@ -1403,8 +1403,8 @@ F-Haiti
 A-Maya
 B-Teotihuacan
 C-Zapotec
-D-Uto-Aztecan --N
-E-Mogollon --N
+D-Uto-Aztecan --Tribal
+E-Mogollon --Tribal
 --Mexico 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -1427,10 +1427,10 @@ E-Mogollon --N
 18= = = = = = = = = = = = = = = = = X
 A-Chichen Itza
 B-Toltec
-C-Mixtec --N
-D-Mogollon --N
-E-Chichimeca --N
-F-Uto-Aztecan --N
+C-Mixtec --Tribal
+D-Mogollon --Tribal
+E-Chichimeca --Tribal
+F-Uto-Aztecan --Tribal
 --Mexico 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -1456,11 +1456,11 @@ B-Tututepec
 C-Aztec
 D-Michoacan
 E-Tlaxcala
-F-Mixtec --N
-G-Apache --N
-H-Choctaw --N
-I-Huastec --N
-J-Chichimeca --N
+F-Mixtec --Tribal
+G-Apache --Tribal
+H-Choctaw --Tribal
+I-Huastec --Tribal
+J-Chichimeca --Tribal
 --Mexico 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -1486,10 +1486,10 @@ B-Michoacan
 C-Tututepec
 D-Yopitzinco
 E-Tlaxcala
-F-Apache --N
-G-Choctaw --N
-H-Huastec --N
-I-Chichimeca --N
+F-Apache --Tribal
+G-Choctaw --Tribal
+H-Huastec --Tribal
+I-Chichimeca --Tribal
 --Mexico 1840AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A A A A A B B B B B B B B B
@@ -1587,12 +1587,12 @@ G-El Salvador
 18= = = = = = = = = = = = = = = = = =
 A-Huari
 B-Tiwanaku
-C-Tupi --N
-D-Guarani --N
-E-Muisca --N
-F-Marajoara --N
-G-Tairona --N
-H-Sican --N
+C-Tupi --Tribal
+D-Guarani --Tribal
+E-Muisca --Tribal
+F-Marajoara --Tribal
+G-Tairona --Tribal
+H-Sican --Tribal
 --South America 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = X x = = = = = = = = = = = =
@@ -1616,13 +1616,13 @@ H-Sican --N
 A-Inca
 B-Aymara
 C-Chimor
-D-Tupi --N
-E-Mapuche --N
-F-Carib --N
-G-Moxos --N
-H-Ge --N
-I-Muisca --N
-J-Marajoara --N
+D-Tupi --Tribal
+E-Mapuche --Tribal
+F-Carib --Tribal
+G-Moxos --Tribal
+H-Ge --Tribal
+I-Muisca --Tribal
+J-Marajoara --Tribal
 --South America 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = X x = = = = = = = = = = = =
@@ -1644,15 +1644,15 @@ J-Marajoara --N
 17= = = = = = = X = x = = = = = = = =
 18= = = = = = = = = = = = = = = = = =
 A-Inca
-B-Tupi --N
-C-Mapuche --N
-D-Carib --N
-E-Muisca --N
-F-Ge --N
-G-Moxos --N
-H-Wichi --N
-I-Pehuenches --N
-J-Guarani --N
+B-Tupi --Tribal
+C-Mapuche --Tribal
+D-Carib --Tribal
+E-Muisca --Tribal
+F-Ge --Tribal
+G-Moxos --Tribal
+H-Wichi --Tribal
+I-Pehuenches --Tribal
+J-Guarani --Tribal
 --South America 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = A a = = = = = = = = = = = =
@@ -1674,15 +1674,15 @@ J-Guarani --N
 17= = = = = = = X = x = = = = = = = =
 18= = = = = = = = = = = = = = = = = =
 A-Spain
-B-Mapuche --N
-C-Tupi --N
-D-Panoan --N
-E-Carib --N
-F-Tehuelches --N
-G-Moxos --N
-H-Ge --N
-I-Marajoara --N
-J-Tucanoan --N
+B-Mapuche --Tribal
+C-Tupi --Tribal
+D-Panoan --Tribal
+E-Carib --Tribal
+F-Tehuelches --Tribal
+G-Moxos --Tribal
+H-Ge --Tribal
+I-Marajoara --Tribal
+J-Tucanoan --Tribal
 --South America 1700AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = B b = = = = = = = = = = = =
@@ -1707,11 +1707,11 @@ A-Portugal
 B-Spain
 C-France
 D-Netherlands
-E-Tupi --N
-F-Mapuche --N
-G-Ge --N
-H-Carib --N
-I-Panoan --N
+E-Tupi --Tribal
+F-Mapuche --Tribal
+G-Ge --Tribal
+H-Carib --Tribal
+I-Panoan --Tribal
 --South America 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = B b = = = = = = = = = = = =
@@ -1836,9 +1836,9 @@ J-Ecuador
 A-Inca
 B-Aymara
 C-Chimor
-D-Tucanoan --N
-E-Panoan --N
-F-Wichi --N
+D-Tucanoan --Tribal
+E-Panoan --Tribal
+F-Wichi --Tribal
 --Andes 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = A X X X X X X X X X X
@@ -1860,9 +1860,9 @@ F-Wichi --N
 17= = = = = = = = = = = = A X X X D X
 18= = = = = = = = = = = = A X X X X X
 A-Inca
-B-Tucanoan --N
-C-Panoan --N
-D-Wichi --N
+B-Tucanoan --Tribal
+C-Panoan --Tribal
+D-Wichi --Tribal
 --Andes 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = C C F F F F D D D D D
@@ -1940,7 +1940,7 @@ F-Thrace
 G-Magna Graecia
 H-Bosporus
 I-Macedonia
-J-Celts --N
+J-Celts --Tribal
 --Europe 300BC--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X X = = X X X X X X
@@ -1998,9 +1998,9 @@ D-Carthage
 E-Numidia
 F-Bosporus
 G-Macedonia
-H-Gauls --N
-I-Germanic --N
-J-Britons --N
+H-Gauls --Tribal
+I-Germanic --Tribal
+J-Britons --Tribal
 --Europe 450AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X X = = X X X X X X
@@ -2029,8 +2029,8 @@ E-Vandals
 F-Visigoth
 G-Wales
 H-Sassanid
-I-Picts --N
-J-Lombards --N
+I-Picts --Tribal
+J-Lombards --Tribal
 --Europe 500AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X X = = X X X X X X
@@ -2060,7 +2060,7 @@ F-Vandals
 G-Gepids
 H-Saxons
 I-Burgundy
-J-Slavs --N
+J-Slavs --Tribal
 --Europe 600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X X = = X X X X X X
@@ -2090,7 +2090,7 @@ F-Mercia
 G-Saxons
 H-Sassanid
 I-Khazars
-J-Norsemen --N
+J-Norsemen --Tribal
 --Europe 750AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X X = = X X X X X X
@@ -2119,8 +2119,8 @@ E-Khazars
 F-Northumbria
 G-Bulgaria
 H-Lombards
-I-Norsemen --N
-J-Slavs --N
+I-Norsemen --Tribal
+J-Slavs --Tribal
 --Europe 800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = X X X X = = X X X X X X
@@ -2149,8 +2149,8 @@ E-Khazars
 F-Asturias
 G-Northumbria
 H-Abbasid
-I-Norsemen --N
-J-Salvs --N
+I-Norsemen --Tribal
+J-Salvs --Tribal
 --Europe 900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = E E X X = = X X X D D X
@@ -2611,15 +2611,15 @@ J-Poland
 16= = = X x = X X = = = I X X X X X X
 17= = = F x x X = = = = X X X X X X X
 18= = = X x x = = = = = X E X X X X X
-A-Norsemen --N
-B-Merya --N
-C-Finns --N
-D-Estonians --N
-E-Lithuanians --N
-F-Danes --N
-G-Swedes --N
-H-Livonians --N
-I-Letts --N
+A-Norsemen --Tribal
+B-Merya --Tribal
+C-Finns --Tribal
+D-Estonians --Tribal
+E-Lithuanians --Tribal
+F-Danes --Tribal
+G-Swedes --Tribal
+H-Livonians --Tribal
+I-Letts --Tribal
 --Scandinavia 1250AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A X X X X X X X X X B B
@@ -2647,7 +2647,7 @@ D-Teutonic Knights
 E-Sweden
 F-Polotsk
 G-Lithuania
-H-Finns --N
+H-Finns --Tribal
 --Scandinavia 1300AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A X X X X X X X X X B B
@@ -2676,7 +2676,7 @@ E-Sweden
 F-Golden Horde
 G-Lithuania
 H-Polotsk
-I-Finns --N
+I-Finns --Tribal
 --Scandinavia 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = A A D D D D D D D D B B
@@ -2804,9 +2804,9 @@ D-Sussex
 E-Thuringia
 F-Wales
 G-Alamanni
-H-Norsemen --N
-I-Picts --N
-J-Munster --N
+H-Norsemen --Tribal
+I-Picts --Tribal
+J-Munster --Tribal
 --North Sea 900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = A A A X X X
@@ -2896,8 +2896,8 @@ E-France
 F-Denmark
 G-Sweden
 H-Wales
-I-Ulster --N
-J-Munster --N
+I-Ulster --Tribal
+J-Munster --Tribal
 --North Sea 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = B B B B B B
@@ -3262,9 +3262,9 @@ D-Persia
 E-Macedonia
 F-Sparta
 G-Athens
-H-Celts --N
-I-Illyrians --N
-J-Umbri --N
+H-Celts --Tribal
+I-Illyrians --Tribal
+J-Umbri --Tribal
 --Mediterranean Sea 300BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -3293,8 +3293,8 @@ E-Greece
 F-Etruscans
 G-Macedonia
 H-Epirus
-I-Gauls --N
-J-Dacians --N
+I-Gauls --Tribal
+J-Dacians --Tribal
 --Mediterranean Sea 250BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -3384,7 +3384,7 @@ F-Burgundy
 G-Gepids
 H-Alamanni
 I-Thuringia
-J-Lombards --N
+J-Lombards --Tribal
 --Mediterranean Sea 600AD--
   a b c d e f g h i j k l m n o p q r
 1 H H H E E E E E E G D D D D D D D D
@@ -3908,13 +3908,13 @@ J-Egypt
 A-Khazars
 B-Franks
 C-Bulgaria
-D-Merya --N
-E-Swedes --N
-F-Slavs --N
-G-Lithuanians --N
-H-Danes --N
-I-Pomeranians --N
-J-Polans --N
+D-Merya --Tribal
+E-Swedes --Tribal
+F-Slavs --Tribal
+G-Lithuanians --Tribal
+H-Danes --Tribal
+I-Pomeranians --Tribal
+J-Polans --Tribal
 --Eastern Europe 900AD--
   a b c d e f g h i j k l m n o p q r
 1 G X X X X = = X X X = X X = A A A A
@@ -3944,7 +3944,7 @@ F-Great Moravia
 G-Norway
 H-Italy
 I-Croatia
-J-Lithuanians --N
+J-Lithuanians --Tribal
 --Eastern Europe 1030AD--
   a b c d e f g h i j k l m n o p q r
 1 C C G X X = = X X X = X X = A A A A
@@ -3974,7 +3974,7 @@ F-Hungary
 G-Sweden
 H-Chernigov
 I-Croatia
-J-Lithuanians --N
+J-Lithuanians --Tribal
 --Eastern Europe 1220AD--
   a b c d e f g h i j k l m n o p q r
 1 O O D X X = = D D X = A A = A A A A
@@ -4685,9 +4685,9 @@ C-Thrace
 D-Epirus
 E-Seleucid
 F-Pergamon
-G-Dacians --N
-H-Illyrians --N
-I-Veneti --N
+G-Dacians --Tribal
+H-Illyrians --Tribal
+I-Veneti --Tribal
 --Balkans 900AD--
   a b c d e f g h i j k l m n o p q r
 1 D X D X X X X X X X X X X X X X X X
@@ -5070,10 +5070,10 @@ C-Wessex
 D-Wales
 E-Essex
 F-Kent
-G-Picts --N
-H-Leinster --N
-I-Ulster --N
-J-Munster --N
+G-Picts --Tribal
+H-Leinster --Tribal
+I-Ulster --Tribal
+J-Munster --Tribal
 --British Isles 900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = = = = = = =
@@ -5127,8 +5127,8 @@ A-England
 B-Scotland
 C-Wales
 D-Norway
-E-Munster --N
-F-Ulster --N
+E-Munster --Tribal
+F-Ulster --Tribal
 --British Isles 2000AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = = = = = = = =
@@ -5194,10 +5194,10 @@ B-Ireland
 A-Rome
 B-Numidia
 C-Mauretania
-D-Celts --N
-E-Iberians --N
-F-Lusitanians --N
-G-Celtberians --N
+D-Celts --Tribal
+E-Iberians --Tribal
+F-Lusitanians --Tribal
+G-Celtberians --Tribal
 --Iberia 410AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = A A A A A A A
@@ -5246,9 +5246,9 @@ A-Eastern Roman Empire
 B-Visigoth
 C-Franks
 D-Suebi
-E-Cantabri --N
-F-Mauretania --N
-G-Vascons --N
+E-Cantabri --Tribal
+F-Mauretania --Tribal
+G-Vascons --Tribal
 --Iberia 900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = = = = = C C C C C C C
@@ -5504,7 +5504,7 @@ F-Sussex
 G-Alamanni
 H-Kent
 I-Suebi
-J-Brittany --N
+J-Brittany --Tribal
 --France 520AD--
   a b c d e f g h i j k l m n o p q r
 1 = = X X X H H I J = C C C C C B B B
@@ -5564,8 +5564,8 @@ E-Lombards
 F-Wessex
 G-Sussex
 H-Kent
-I-Brittany --N
-J-Vascons --N
+I-Brittany --Tribal
+J-Vascons --Tribal
 --France 650AD--
   a b c d e f g h i j k l m n o p q r
 1 = = X X X E E F G = B B B B B A A A
@@ -5593,7 +5593,7 @@ D-Lombards
 E-Wessex
 F-Sussex
 G-Kent
-H-Brittany --N
+H-Brittany --Tribal
 --France 880AD--
   a b c d e f g h i j k l m n o p q r
 1 = = E E E E E E E = A A A A A B B B
@@ -5775,16 +5775,16 @@ I-Andorra
 17A A A A A A A A A A A A A A A A A A
 18A A A A A A A A A A A A A A A A A A
 A-Rome
-B-Franks --N
-C-Burgundians --N
-D-Saxons --N
-E-Rugii --N
-F-Vandals --N
-G-Alamanni --N
-H-Marcomanni --N
-I-Frisians --N
-J-Lombards --N
-K-Angles --N
+B-Franks --Tribal
+C-Burgundians --Tribal
+D-Saxons --Tribal
+E-Rugii --Tribal
+F-Vandals --Tribal
+G-Alamanni --Tribal
+H-Marcomanni --Tribal
+I-Frisians --Tribal
+J-Lombards --Tribal
+K-Angles --Tribal
 --Germany 500AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = X X x x x = = = = = =
@@ -5811,8 +5811,8 @@ C-Saxons
 D-Thuringia
 E-Alamanni
 F-Burgundians
-G-Frisians --N
-H-Lombards --N
+G-Frisians --Tribal
+H-Lombards --Tribal
 --Germany 600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = X X x x x = = = = = =
@@ -5839,9 +5839,9 @@ C-Saxons
 D-Neustria
 E-Bavaria
 F-Orleans
-G-Frisians --N
-H-Pomeranians --N
-I-Polans --N
+G-Frisians --Tribal
+H-Pomeranians --Tribal
+I-Polans --Tribal
 --Germany 1650AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = G G g g g = = = = = =
@@ -6019,10 +6019,10 @@ C-Etruscans
 D-Magna Graecia
 E-Syracuse
 F-Massalia
-G-Illyrians --N
-H-Volcae --N
-I-Ligurians --N
-J-Umbri --N
+G-Illyrians --Tribal
+H-Volcae --Tribal
+I-Ligurians --Tribal
+J-Umbri --Tribal
 --Italy 700AD--
   a b c d e f g h i j k l m n o p q r
 1 E E E E B B B B B B B A A A A G G G
@@ -6438,10 +6438,10 @@ C-Aksum
 D-Meroe
 E-Himyar
 F-Sassanid
-G-Berbers --N
-H-Tuareg --N
-I-Bantu --N
-J-Khoisan --N
+G-Berbers --Tribal
+H-Tuareg --Tribal
+I-Bantu --Tribal
+J-Khoisan --Tribal
 --Africa 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = a a = = x = I = I X J J = X X
@@ -7433,9 +7433,9 @@ A-Portugal
 B-Netherlands
 C-Rozwi
 D-Mutapa
-E-Herero --N
-F-Khoisan --N
-G-Bantu --N
+E-Herero --Tribal
+F-Khoisan --Tribal
+G-Bantu --Tribal
 --Southern Africa 1850AD--
   a b c d e f g h i j k l m n o p q r
 1 = = C X X X X D D X H H X X X X X C
@@ -7464,8 +7464,8 @@ E-Rozwi
 F-Zulu
 G-Swazi
 H-Kazembe
-I-Khoisan --N
-J-Herero --N
+I-Khoisan --Tribal
+J-Herero --Tribal
 --Southern Africa 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B B B B A A A A A A B B B B
@@ -7566,8 +7566,8 @@ B-Mutapa
 C-Buganda
 D-Zanzibar
 E-Rwanda
-F-Malagasy --N
-G-Bantu --N
+F-Malagasy --Tribal
+G-Bantu --Tribal
 --East Africa 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X = = = = =
@@ -7831,7 +7831,7 @@ E-Urartu
 F-Egypt
 G-Kush
 H-Judea
-I-Xiongnu --N
+I-Xiongnu --Tribal
 --Asia 700BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -7916,9 +7916,9 @@ D-Qin
 E-Chu
 F-Yan
 G-Xiongnu
-H-Scythian --N
-I-Dravidian --N
-J-Arabs --N
+H-Scythian --Tribal
+I-Dravidian --Tribal
+J-Arabs --Tribal
 --Asia 330BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -8589,10 +8589,10 @@ B-Babylonia
 C-Egypt
 D-Hittites
 E-Elam
-F-Nairi --N
-G-Bactria --N
-H-Aramaeans --N
-I-Semetic Peoples --N
+F-Nairi --Tribal
+G-Bactria --Tribal
+H-Aramaeans --Tribal
+I-Semetic Peoples --Tribal
 --Middle East 650BC--
   a b c d e f g h i j k l m n o p q r
 1 G X X A A F F F X X = = X X X X X X
@@ -8622,7 +8622,7 @@ F-Urartu
 G-Lydia
 H-Anshan
 I-Kush
-J-Arabs --N
+J-Arabs --Tribal
 --Middle East 550BC--
   a b c d e f g h i j k l m n o p q r
 1 D B B B B B B B B B = = X X B B B B
@@ -8648,7 +8648,7 @@ B-Persia
 C-Egypt
 D-Lydia
 E-Kush
-F-Arabs --N
+F-Arabs --Tribal
 --Middle East 100BC--
   a b c d e f g h i j k l m n o p q r
 1 D D D J G G G G B B = = B B B B B B
@@ -8704,7 +8704,7 @@ B-Rome
 C-Kushan
 D-Meroe
 E-Aksum
-F-Arabs --N
+F-Arabs --Tribal
 --Middle East 630AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A A A A B B = = B B B B B B
@@ -8733,7 +8733,7 @@ E-Aksum
 F-Ghassanids
 G-Makuria
 H-Alodia
-I-Arabs --N
+I-Arabs --Tribal
 --Middle East 650AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C A A A A A A A = = B B B B B B
@@ -8786,7 +8786,7 @@ C-Egypt
 D-Byzantium
 E-Makuria
 F-Alodia
-G-Arabs --N
+G-Arabs --Tribal
 --Middle East 1100AD--
   a b c d e f g h i j k l m n o p q r
 1 F F F A A A A A A A = = D D D D D D
@@ -8936,7 +8936,7 @@ F-Yemen
 G-Alodia
 H-Dulkadir
 I-Venice
-J-Arabs --N
+J-Arabs --Tribal
 --Middle East 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 A A A A A A A B B E = = E E E E E E
@@ -9503,9 +9503,9 @@ D-Tang
 E-Magadha
 F-Champa
 G-Lavo
-H-Thai --N
-I-Malays --N
-J-Papuan --N
+H-Thai --Tribal
+I-Malays --Tribal
+J-Papuan --Tribal
 --Southeast Asia 1200AD--
   a b c d e f g h i j k l m n o p q r
 1 F X X X D E E E E E = = = = = = = =
@@ -10408,7 +10408,7 @@ C-Ebla
 18B X X = = X X X X X X X X X X X X X
 A-Akkad
 B-Egypt
-C-Amorite --N
+C-Amorite --Tribal
 --Levant 1200BC--
   a b c d e f g h i j k l m n o p q r
 1 X X D D D D D D D D A A A X X X X X
@@ -10434,7 +10434,7 @@ B-Babylonia
 C-Egypt
 D-Hittites
 E-Carchemish
-F-Aramaeans --N
+F-Aramaeans --Tribal
 --Levant 1000BC--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X X X X X
@@ -10820,8 +10820,8 @@ E-Judea
 F-Israel
 G-Phoenicia
 H-Aramaeans
-I-Arabs --N
-J-Ethiopian --N
+I-Arabs --Tribal
+J-Ethiopian --Tribal
 --Arabian Penninsula 100BC--
   a b c d e f g h i j k l m n o p q r
 1 = = G F X X X F C C C C C C C C C C
@@ -10850,8 +10850,8 @@ E-Nabatea
 F-Seleucid
 G-Judea
 H-Meroe
-I-Arabs --N
-J-Ethiopian --N
+I-Arabs --Tribal
+J-Ethiopian --Tribal
 --Arabian Penninsula 200AD--
   a b c d e f g h i j k l m n o p q r
 1 = = D D D X X E E E E E E E E E E E
@@ -10878,7 +10878,7 @@ C-Aksum
 D-Rome
 E-Parthia
 F-Meroe
-G-Arabs --N
+G-Arabs --Tribal
 --Arabian Penninsula 600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B B E D D A A A A A A A A A A
@@ -10908,7 +10908,7 @@ F-Mecca
 G-Nobatia
 H-Makuria
 I-Alodia
-J-Arabs --N
+J-Arabs --Tribal
 --Arabian Penninsula 630AD--
   a b c d e f g h i j k l m n o p q r
 1 = = E E E F C C C C C C C C C C C C
@@ -10938,7 +10938,7 @@ F-Ghassanids
 G-Nobatia
 H-Makuria
 I-Alodia
-J-Arabs --N
+J-Arabs --Tribal
 --Arabian Penninsula 1150AD--
   a b c d e f g h i j k l m n o p q r
 1 = = H A X X X D D D D D D D D I I I
@@ -10970,7 +10970,7 @@ H-Jerusalem
 I-Khorasan
 J-Makuria
 K-Alodia
-L-Arabs --N
+L-Arabs --Tribal
 --Arabian Penninsula 1200AD--
   a b c d e f g h i j k l m n o p q r
 1 = = J A X X X B B B B B B B B X X X
@@ -11001,7 +11001,7 @@ G-Ghurid
 H-Makuria
 I-Alodia
 J-Jerusalem
-K-Arabs --N
+K-Arabs --Tribal
 --Arabian Penninsula 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 = = A A X X X D D D D D D D D D H H
@@ -11030,7 +11030,7 @@ E-Ethiopia
 F-Adal
 G-Alodia
 H-Timurid
-I-Arabs --N
+I-Arabs --Tribal
 --Arabian Penninsula 1800AD--
   a b c d e f g h i j k l m n o p q r
 1 = = B B X X A B B B E E E E E E E E
@@ -12010,10 +12010,10 @@ B-Parthia
 C-Bosporus
 D-Nabatea
 E-Thrace
-F-Dacians --N
-G-Alans --N
-H-Arabs --N
-I-Libyans --N
+F-Dacians --Tribal
+G-Alans --Tribal
+H-Arabs --Tribal
+I-Libyans --Tribal
 --Turkey 700AD--
   a b c d e f g h i j k l m n o p q r
 1 C C C C C C C = D D = = D D D D D D
@@ -12691,9 +12691,9 @@ A-Funan
 B-Champa
 C-Han
 D-Satavahana
-E-Mon-Khmer --N
-F-Thai --N
-G-Malays --N
+E-Mon-Khmer --Tribal
+F-Thai --Tribal
+G-Malays --Tribal
 --Siam 600AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X X X X X X X D D D D
@@ -12721,9 +12721,9 @@ D-Sui
 E-Kamarupa
 F-Magadha
 G-Kongoda
-H-Mon-Khmer --N
-I-Thai --N
-J-Malays --N
+H-Mon-Khmer --Tribal
+I-Thai --Tribal
+J-Malays --Tribal
 --Siam 700AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X X D D X X X X D D D D
@@ -12751,9 +12751,9 @@ D-Tang
 E-Kamarupa
 F-Magadha
 G-Gauda
-H-Mon-Khmer --N
-I-Thai --N
-J-Malays --N
+H-Mon-Khmer --Tribal
+I-Thai --Tribal
+J-Malays --Tribal
 --Siam 750AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X B H H X X X X H H H H
@@ -12876,7 +12876,7 @@ F-Champa
 G-Srivijaya
 H-Song
 I-Bengal
-J-Malays --N
+J-Malays --Tribal
 --Siam 1300AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X G G G G G G G G G G G
@@ -12906,7 +12906,7 @@ F-Champa
 G-Yuan
 H-Delhi
 I-Assam
-J-Malays --N
+J-Malays --Tribal
 --Siam 1380AD--
   a b c d e f g h i j k l m n o p q r
 1 X X X X X X X C C C J J J J J J J J
@@ -13282,9 +13282,9 @@ A-Srivijaya
 B-Mataram
 C-Chenla
 D-Lavo
-E-Malays --N
-F-Papuas --N
-G-Australians --N
+E-Malays --Tribal
+F-Papuas --Tribal
+G-Australians --Tribal
 --Indonesia 1250AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -13312,9 +13312,9 @@ D-Srivijaya
 E-Panjalu
 F-Janggala
 G-Khmer
-H-Malays --N
-I-Papuas --N
-J-Australians --N
+H-Malays --Tribal
+I-Papuas --Tribal
+J-Australians --Tribal
 --Indonesia 1400AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -13343,8 +13343,8 @@ E-Bacan
 F-Jailolo
 G-Ayutthaya
 H-Cambodia
-I-Malays --N
-J-Papuas --N
+I-Malays --Tribal
+J-Papuas --Tribal
 --Indonesia 1500AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -13481,7 +13481,7 @@ F-United Kingdom
 G-Spanish Philippines
 H-Siam
 I-French Indochina
-J-Papuas --N
+J-Papuas --Tribal
 --Indonesia 1900AD--
   a b c d e f g h i j k l m n o p q r
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -13580,7 +13580,7 @@ J-Australia
 18= = B B B B = = = = = = = = = = = =
 A-Maguindanao
 B-Sulu
-C-Malays --N
+C-Malays --Tribal
 --Philippines 1600AD--
   a b c d e f g h i j k l m n o p q r
 1 = = = = = = = A A A = = = = = = = =
@@ -14155,8 +14155,8 @@ E-Jinhan --Korean
 F-Byeonhan --Korean
 G-Dongye --Korean
 H-Han
-I-Buyeo --N --Korean
-J-Xianbei --N
+I-Buyeo --Tribal --Korean
+J-Xianbei --Tribal
 --Korea 200AD--
   a b c d e f g h i j k l m n o p q r
 1 E E X X X X X G X X X X X = = = = =
@@ -14183,7 +14183,7 @@ C-Baekje --Korean
 D-Gaya --Korean
 E-Han
 F-Japan
-G-Buyeo --N --Korean
+G-Buyeo --Tribal --Korean
 --Korea 800AD--
   a b c d e f g h i j k l m n o p q r
 1 E E E E A A A A A A A A A = = = = =
@@ -14322,7 +14322,7 @@ E-Russia
 17= = = = = = = = = = = = = = = = = =
 18= = = = = = = = = = = = = = = = = =
 A-Japan
-B-Ainu --N
+B-Ainu --Tribal
 C-Goguryeo
 D-Silla
 E-Baekje
@@ -14387,7 +14387,7 @@ S-Ashina
 17= = = = = = = = = = = = = = = = = =
 18= = = = = = = = = = = = = = = = = =
 A-Japan
-B-Ainu --N
+B-Ainu --Tribal
 C-Joseon
 D-Qing
 --Japan 2000AD--
