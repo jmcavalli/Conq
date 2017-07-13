@@ -7,8 +7,6 @@ package conq;
 
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -57,12 +55,17 @@ public class Menu {
         loader.locations.get(ans).disMap();
         System.out.println();
         System.out.println(question);
-        System.out.println("Enter y to confirm or q to return to mainmenu");
+        System.out.println("Enter z and x to scroll, y to confirm, or q to return to mainmenu");
         System.out.println("===================");
         System.out.println(((ans > 0) ? "" : "\u001B[30m") + "< z  " + "\u001B[0m" + loader.locations.get(ans).name + ((ans < loader.locations.size() - 1) ? "" : "\u001B[30m") + "  x >" + "\u001B[0m");
         System.out.println("===================");
-        try {
-            int input = System.in.read();
+            int input;
+            String input1 = System.console().readLine();
+            if(input1.length() > 0)
+                input = input1.charAt(0);
+            else
+                input = ' ';
+            //int input = System.in.read();
             if(input == 'z' && ans > 0)
                 ans--;
             else if(input == 'x' && ans < loader.locations.size() - 1)
@@ -71,29 +74,33 @@ public class Menu {
                 chosen = true;
             else if(input == 'q')
                 return -1;
-        }catch(IOException ex){
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
         }
         return ans;
     }
     
     public int chooseTime(Loader loader, int loc, String question){
         int ans = 0;
+        Color c = new Color();
         boolean chosen = false;
         while(chosen == false){
         clearScreen();
         loader.locations.get(loc).maps.get(ans).disMap();
         System.out.println();
+        System.out.println(c.LBLACK + "X- Unowned land " + c.BLUE + "=- Sea " + c.RESET + "lowercase- coastal");
         System.out.println(question);
-        System.out.println("Enter y to confirm or q to return to mainmenu");
+        System.out.println("Enter z and x to scroll, y to confirm, or q to return to mainmenu");
         System.out.println(loader.locations.get(loc).name);
         System.out.println("===================");
         System.out.println(((ans > 0) ? "" : "\u001B[30m") + "< z  " + "\u001B[0m" + loader.locations.get(loc).maps.get(ans).year 
                 + ((loader.locations.get(loc).maps.get(ans).era) ? "AD" : "BC") + ((ans < loader.locations.get(loc).maps.size() - 1) ? "" : "\u001B[30m") + "  x >" + "\u001B[0m");
         System.out.println("===================");
-        try {
-            int input = System.in.read();
+            int input;
+            String input1 = System.console().readLine();
+            if(input1.length() > 0)
+                input = input1.charAt(0);
+            else
+                input = ' ';
+            //int input = System.in.read();
             if(input == 'z' && ans > 0)
                 ans--;
             else if(input == 'x' && ans < loader.locations.get(loc).maps.size() - 1)
@@ -102,9 +109,6 @@ public class Menu {
                 chosen = true;
             else if(input == 'q')
                 return -1;
-        }catch(IOException ex){
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
         }
         return ans;
     }
@@ -117,7 +121,7 @@ public class Menu {
         loader.locations.get(loc).maps.get(time).disMapCiv(ans);
         System.out.println();
         System.out.println(question);
-        System.out.println("Enter y to confirm or q to return to mainmenu");
+        System.out.println("Enter z and x to scroll, y to confirm, or q to return to mainmenu");
         System.out.println(loader.locations.get(loc).name + " in " +
             loader.locations.get(loc).maps.get(time).year + 
             ((loader.locations.get(loc).maps.get(time).era)
@@ -130,8 +134,13 @@ public class Menu {
             System.out.print(" " + loader.locations.get(loc).maps.get(time).civs.get(ans).attr.get(i));
         }
         System.out.println();
-        try {
-            int input = System.in.read();
+            int input;
+            String input1 = System.console().readLine();
+            if(input1.length() > 0)
+                input = input1.charAt(0);
+            else
+                input = ' ';
+            //int input = System.in.read();
             if(input == 'z' && ans > 0)
                 ans--;
             else if(input == 'x' && ans < loader.locations.get(loc).maps.get(time).civs.size() - 1)
@@ -140,9 +149,6 @@ public class Menu {
                 chosen = true;
             else if(input == 'q')
                 return -1;
-        }catch(IOException ex){
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
         }
         return ans;
     }
