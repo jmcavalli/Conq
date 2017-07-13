@@ -45,20 +45,63 @@ class lMap{
     
     public void disMap(){
         Color c = new Color();
+        
+        int maxLength = 0;
+        int maxLengthIndex = 0;
+        for(int i = 0; i < civs.size(); i++){
+            if(civs.get(maxLengthIndex).name.length() < civs.get(i).name.length()){
+                maxLengthIndex = i;
+                maxLength = civs.get(i).name.length();
+            }
+        }
+        
         for(int i = 0; i < 18; i++){
             for(int j = 0; j < 18; j++){
                 if(map[i][j] == '=')
                     System.out.print(c.BLUE + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == 'x')
-                    System.out.print(c.CYAN + map[i][j] + " "  + c.RESET);
+                    System.out.print(c.LBLACK + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == 'X')
-                    System.out.print(c.GREEN + map[i][j] + " "  + c.RESET);
+                    System.out.print(c.LBLACK + map[i][j] + " "  + c.RESET);
                 else if(map[i][j] == '0')
                     System.out.print(c.BLACK + c.BBLACK + map[i][j] + " "  + c.RESET);
-                else
-                    System.out.print(c.WHITE + map[i][j] + " "  + c.RESET);
+                else{
+                    if(Character.isAlphabetic(map[i][j])){
+                        if(Character.isLowerCase(map[i][j])){
+                            System.out.print(c.civColor(map[i][j] - 'a') + map[i][j] + " "  + c.RESET);
+                        }else{
+                            System.out.print(c.civColor(map[i][j] - 'A') + map[i][j] + " "  + c.RESET);
+                        }
+                    }else{
+                        System.out.print(c.civColor(25 + (map[i][j] - '!')) + map[i][j] + " "  + c.RESET);
+                    }
+                    
+                }
             }
-            System.out.print("\n");
+            if(i < civs.size()){
+                if(Character.isAlphabetic(civs.get(i).sym)){
+                    System.out.print(c.civColor(civs.get(i).sym - 'A'));
+                }else{
+                    System.out.print(c.civColor(25 + (civs.get(i).sym - '!')));
+                }
+            }
+            System.out.print(((i < civs.size()) 
+                    ? (" " + civs.get(i).sym + "-" + civs.get(i).name) 
+                    : "") + c.RESET);
+            if(18 + i < civs.size()){
+                if(Character.isAlphabetic(civs.get(18 + i).sym)){
+                    System.out.print(c.civColor(civs.get(18 + i).sym - 'A'));
+                }else{
+                    System.out.print(c.civColor(25 + (civs.get(18 + i).sym - '!')));
+                }
+            
+            for(int j = 0; j < (maxLength - civs.get(i).name.length()); j++)
+                System.out.print(" ");
+            }
+            
+            System.out.print(((18 + i < civs.size()) 
+                    ? (" " + civs.get(18 + i).sym + "-" + civs.get(18 + i).name + " ") 
+                    : "") + "\n" + c.RESET);
         }
     }
     
