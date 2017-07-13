@@ -49,7 +49,8 @@ public class Main {
     static void newGame(Loader loader){
         System.out.println("Creating a new game...");
         Game theGame = new Game();
-        if(theGame.setUp(loader) == -1){
+        int choice = theGame.setUp(loader);
+        if(choice == -1){
             return;
         }
         theGame.play();
