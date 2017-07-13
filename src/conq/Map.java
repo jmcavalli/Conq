@@ -14,7 +14,7 @@ import java.util.*;
 
 class Tile{
     int type; //-1 = water, 0 = coastal, 1 = land
-    int ownerID = -1 ;
+    int ownerID = -1;
     int navyID = -1;
     String religion = "";
     String culture = "";
