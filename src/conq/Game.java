@@ -5,18 +5,19 @@
  */
 package conq;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Random;
 import java.util.ArrayList;
+
 
 /**
  *
  * @author bible_000
  */
 
-class Trade {
+class Trade implements java.io.Serializable{
     int playerA;
     int playerB;
     int foodA;
@@ -29,13 +30,13 @@ class Trade {
     int timer;
 }
 
-public class Game {
+public class Game implements java.io.Serializable{
     
     Map map;
     int year;
     int month;
     String era;
-    //int playerID;
+    int playerID = 0;
     int [] players;
     Civ[] civs;
     ArrayList<Trade> trades = new ArrayList();
@@ -43,12 +44,28 @@ public class Game {
     int lookY;
     int turnNum;
     int numTurn;
+    String fileName;
     Random rand1 = new Random();
     
     
     int setUp(Loader loader){
-        //Pick a location
+        //Set file name
+        
         Menu menu = new Menu();
+        int input = 0;
+        while(input <= 0){
+            menu.clearScreen();
+            System.out.println("Please set a name for the savefile: ");
+            try{
+                fileName = System.console().readLine();
+                input = 1;
+            }catch(NumberFormatException e){
+                input = 0;
+            }
+            
+         }
+        
+        //Pick a location
         int loc = menu.chooseLoc(loader, "Please pick your region");
         if(loc == -1){
             return -1;
@@ -921,6 +938,40 @@ public class Game {
             }
             
             for(int i = 0; i < players.length; i++){
+                playerID = i;
+                int end = takeTurn(players[i]);
+                if (end == 1)
+                    return;
+            }
+            yearIncrement();
+            turnNum++;
+        }
+        
+        gameResults();
+    }
+    
+    void playFromSave(){
+        int input = 0;
+        
+        for(int i = playerID; i < players.length; i++){
+                playerID = i;
+                int end = takeTurn(players[i]);
+                if (end == 1)
+                    return;
+            }
+            yearIncrement();
+            turnNum++;
+        
+        
+        while(turnNum < numTurn){
+            roundUpdate();
+            for(int i = 0; i < civs.length;i++){
+                if(!civs[i].human)
+                    takeTurn(i);
+            }
+            
+            for(int i = 0; i < players.length; i++){
+                playerID = i;
                 int end = takeTurn(players[i]);
                 if (end == 1)
                     return;

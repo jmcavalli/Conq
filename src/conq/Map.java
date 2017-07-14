@@ -12,7 +12,7 @@ package conq;
 
 import java.util.*;
 
-class Tile{
+class Tile implements java.io.Serializable{
     int type; //-1 = water, 0 = coastal, 1 = land
     int ownerID = -1;
     int navyID = -1;
@@ -31,7 +31,7 @@ class Building {
 }
 
 
-public class Map {
+public class Map implements java.io.Serializable{
     int playerID;
     String location;
     int year;

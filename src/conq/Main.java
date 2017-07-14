@@ -55,14 +55,66 @@ public class Main {
         }
         theGame.play();
         theGame.quitGame();
+        save(theGame);
     }
     
     static void loadGame(){
         System.out.println("Loading game...");
+        Game theGame = new Game();
+        String fileName = "";
+        
+        Menu menu = new Menu();
+        menu.clearScreen();
+            
+        File folder = new File(System.getProperty("user.dir"));
+        File[] listOfFiles = folder.listFiles();
+        System.out.println("Found savefiles: ");
+        for (int i = 0; i < listOfFiles.length; i++) {
+          if (listOfFiles[i].getName().endsWith(".ser")) {
+            System.out.println("  " + listOfFiles[i].getName().substring(0, listOfFiles[i].getName().length() - 4));
+          }
+        }
+    
+        
+            System.out.println("Please write the name of the savefile: ");
+                fileName = System.console().readLine();
+        
+        try {
+             FileInputStream fileIn = new FileInputStream(fileName + ".ser");
+             ObjectInputStream in = new ObjectInputStream(fileIn);
+             theGame = (Game) in.readObject();
+             in.close();
+             fileIn.close();
+          }catch(IOException i) {
+             i.printStackTrace();
+             return;
+          }catch(ClassNotFoundException c) {
+             System.out.println("Employee class not found");
+             c.printStackTrace();
+             return;
+          }
+        
+        theGame.playFromSave();
+        theGame.quitGame();
+        save(theGame);
     }
     
     static void options(){
         System.out.println("Showing options...");
+    }
+    
+    static void save(Game game){
+    try {
+         FileOutputStream fileOut =
+         new FileOutputStream(game.fileName + ".ser");
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(game);
+         out.close();
+         fileOut.close();
+         System.out.println("Game is saved as " + game.fileName + ".ser");
+      }catch(IOException i) {
+         i.printStackTrace();
+      }
     }
     
     static void quit(){

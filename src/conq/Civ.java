@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author bible_000
  */
-public class Civ {
+public class Civ implements java.io.Serializable{
     public char sym;
     public String name;
     public ArrayList<String> attr = new ArrayList();
