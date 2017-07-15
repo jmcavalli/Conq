@@ -524,19 +524,19 @@ public class Game implements java.io.Serializable{
                 (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= 100
                     && map.map[lookY][lookX].type != -1 
                     ? (c.LGREEN + "#- Farm" + c.RESET)
-                    : (c.RED + "#- Farm (You need to place it in your own territory and have 100 gold)" + c.RESET)),
+                    : (c.RED + "#- Farm (100 gold)" + c.RESET)),
                 (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= 100
                     && map.map[lookY][lookX].type != -1 
                     ? (c.LYELLOW + "^- Mine" + c.RESET)
-                    : (c.RED + "^- Mine (You need to place it in your own territory and have 100 gold)" + c.RESET)),
+                    : (c.RED + "^- Mine (100 gold)" + c.RESET)),
                 (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= 100
                     && map.map[lookY][lookX].type != -1 
-                    ? (c.LRED + "@- Fort (Can make navies in sea tiles adjacent to @)" + c.RESET)
-                    : (c.RED + "@- Fort (You need to place it in your own territory and have 100 gold)" + c.RESET)),
+                    ? (c.LRED + "@- Fort (Make navies in nearby sea)" + c.RESET)
+                    : (c.RED + "@- Fort (100 gold)" + c.RESET)),
                 (canBuildNavy(player, lookX, lookY)   && map.map[lookY][lookX].navyID == -1
                     && civs[player].gold >= 10
                     ? (c.LBLUE + "n- Navy" + c.RESET)
-                    : (c.RED + "n- Navy (You need to build it in a sea tile adjacent to a @ and have 10 gold)" + c.RESET)),
+                    : (c.RED + "n- Navy (10 gold)" + c.RESET)),
                 "",
                 "",
                 "",
@@ -930,6 +930,63 @@ public class Game implements java.io.Serializable{
             
             }
             numTurn = input;
+            
+            input = 0;
+            Color c1 = new Color();
+            int agg = 50;
+            boolean ran = false;
+            while(input != 'y'){
+            menu.clearScreen();
+            System.out.println("Please enter the AI aggressiveness percentage: ");
+            System.out.print("AI Aggessiveness [");
+            if(agg < 25)
+                System.out.print(c1.LBLUE);
+            else if(agg < 50)
+                System.out.print(c1.LGREEN);
+            else if(agg < 75)
+                System.out.print(c1.LYELLOW);
+            else if(agg <= 100)
+                System.out.print(c1.LRED);
+            
+            if(ran)
+                System.out.print(c1.LBLACK);
+            
+            for(int i = 0; i < agg/10; i++)
+                System.out.print("=");
+            for(int i = 0; i < 10 - agg/10; i++)
+                System.out.print(" ");
+            System.out.println(c1.RESET + "] " + agg + "%");
+            System.out.println((ran ? c1.GREEN + "r- random distribution on": "r- random distribution off") + c1.RESET);
+            System.out.println("y- confirm\n");
+            try{
+                String input1 = System.console().readLine();
+                if(input1.charAt(0) == 'r'){
+                    if(ran)
+                        ran = false;
+                    else
+                        ran = true;
+                }else if(input1.charAt(0) == 'y'){
+                    input = 'y';
+                }else{
+                    agg = Integer.parseInt(input1);
+                    if(agg > 100 || agg < 0)
+                        agg = 50;
+                }
+            }catch(NumberFormatException e){
+                agg = 50;
+            }
+            
+            }
+            
+            for(int i = 0; i < civs.length;i++){
+                if(!civs[i].human){
+                    if (ran)
+                        civs[i].agressiveness = rand.nextDouble();
+                    else
+                        civs[i].agressiveness = (double)agg/100;
+                }
+            }
+            
         
         for(int i = 0; i < players.length; i++){
             int end = chooseCapital(players[i]);
@@ -938,10 +995,8 @@ public class Game implements java.io.Serializable{
         }
         
         for(int i = 0; i < civs.length;i++){
-                if(!civs[i].human){
-                    civs[i].agressiveness = rand.nextDouble();
+                if(!civs[i].human)
                     chooseCapital(i);
-                }
             }
         
         while(turnNum < numTurn){
@@ -1073,6 +1128,38 @@ public class Game implements java.io.Serializable{
                 }
             }
             
+            if(civs[player].gold >= 10 && numNavies(player) < 3){//navies
+                int total = 0;
+                for(int i = 0; i < 18; i++){
+                    for(int j = 0; j < 18; j++){
+                        if(canBuildNavy(player, i, j)){
+                            total++;
+                        }
+                    }
+                }
+                Random rand = new Random();
+                int num = 0;
+                if(total > 0)
+                    num = rand.nextInt(total);
+                int i, j;
+                for(i = 0; i < 18; i++){
+                    for(j = 0; j < 18; j++){
+                        if(canBuildNavy(player, i, j)){
+                            num--;
+                            if(total > 0 && num < 1 && canBuildNavy(player, i, j)){
+                                break;
+                            }
+                        }
+                    }
+                    if(j < 18 && total > 0 && num < 1 && canBuildNavy(player, i, j)){
+                        map.map[j][i].navyID = player;
+                        civs[player].gold -= 10;
+                        break;
+                    }
+                }
+                
+            }
+            
             //Attacking
             Random rand = new Random();
             for(int x = 0; x < 18; x++){
@@ -1124,7 +1211,7 @@ public class Game implements java.io.Serializable{
                                             "",
                                             "",
                                             };
-                                        display(player, sidemenu, 2, true, x, y);
+                                        display(map.map[y][x].ownerID, sidemenu, 2, true, x, y);
                                         String input1 = System.console().readLine();
                                         if(input1.length() > 0)
                                             input = input1.charAt(0);
@@ -1148,6 +1235,51 @@ public class Game implements java.io.Serializable{
                                     cost += batCost;
                                     eCost += 2 - batCost;
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            //Moving Navies
+            for(int x = 0; x < 18; x++){
+                for(int y = 0; y < 18; y++){
+                    if(map.map[y][x].navyID == player && map.map[y][x].move){
+                        int total = 0;
+                        for(int i = 0; i < 18; i++){
+                            for(int j = 0; j < 18; j++){
+                                if(map.connectedByWater(x, y, i, j, 3))
+                                    total++;
+                            }
+                        }
+                        int move = 0;
+                        if(total > 0)
+                            move = rand.nextInt(total);
+                        int i, j;
+                        for(i = 0; i < 18; i++){
+                            for(j = 0; j < 18; j++){
+                                if(map.connectedByWater(x, y, i, j, 3)){
+                                    move--;
+                                    if(move < 1){
+                                        break;
+                                    }
+                                }
+                            }
+                            if(j < 18 && total > 0 && move < 1 && map.connectedByWater(x, y, i, j, 3)){
+                                if(map.map[j][i].navyID < 0){
+                                    map.map[y][x].navyID = -1;
+                                    map.map[j][i].navyID = player;
+                                }else{
+                                    int res = attackRound(player, map.map[j][i].navyID, false);
+                                    if(res == 0){
+                                        map.map[y][x].navyID = -1;
+                                        map.map[j][i].navyID = player;
+                                    }else if(res == 2){
+                                        map.map[y][x].navyID = -1;
+                                    }
+                                }
+                                map.map[j][i].move = false;
+                                break;
                             }
                         }
                     }
@@ -1493,7 +1625,7 @@ public class Game implements java.io.Serializable{
     }
     
     boolean canBuildNavy(int player, int X, int Y){
-        if(map.map[Y][X].type == -1
+        if(map.map[Y][X].type == -1 && map.onMap(X, Y)
           && ((X - 1 >= 0 && map.map[Y][X - 1].ownerID == player && numBases(map.map[Y][X - 1].buildings) > 0)
                   || (X + 1 <= 17 && map.map[Y][X + 1].ownerID == player && numBases(map.map[Y][X + 1].buildings) > 0)
                   || (Y - 1 >= 0 && map.map[Y - 1][X].ownerID == player && numBases(map.map[Y - 1][X].buildings) > 0)
@@ -1573,6 +1705,18 @@ public class Game implements java.io.Serializable{
             index++;
         }
         return ans;
+    }
+    
+    int numNavies(int player){
+        int total = 0;
+        for(int i = 0; i < 18; i++){
+            for(int j = 0; j < 18; j++){
+                if(map.map[j][i].navyID == player)
+                    total++;
+            }
+        }
+        
+        return total;
     }
     
     void chooseRandomSpotInNation(int player){
