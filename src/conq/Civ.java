@@ -17,6 +17,7 @@ public class Civ implements java.io.Serializable{
     public ArrayList<String> attr = new ArrayList();
     boolean human = false;
     int bonusPoints = 0;
+    double agressiveness;
     
     int capX = 0;
     int capY = 0;
