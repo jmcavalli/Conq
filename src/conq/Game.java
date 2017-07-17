@@ -921,7 +921,7 @@ public class Game implements java.io.Serializable{
         Random rand = new Random();
             while(input <= 0){
             menu.clearScreen();
-            System.out.println("Please select the number of turns (defult 10): ");
+            System.out.println("Please select the number of turns (default 10): ");
             try{
                 input = Integer.parseInt(System.console().readLine());
             }catch(NumberFormatException e){
@@ -1314,7 +1314,7 @@ public class Game implements java.io.Serializable{
                 "",
                 "",
                 "z-end turn",
-                "q-quit game",
+                "q-save and quit game",
                 };
             display(player, sidemenu, 0, false, lookX, lookY);
             String input1 = System.console().readLine();
@@ -1402,7 +1402,7 @@ public class Game implements java.io.Serializable{
         System.out.print("#  Nation");
         for(int j = 0; j < (maxLength - 6); j++)
                 System.out.print(" ");
-        System.out.println(" points" + c.LGREEN + " Food" + c.YELLOW + " Income" + c.LRED + " Area" + c.LCYAN + " Bonus");
+        System.out.println(" points" + c.LGREEN + " Food" + c.YELLOW + " Income" + c.LRED + " Area" + c.LCYAN + " Bonus" + c.RESET);
         
         for(int i = 0; i < winners.length; i++){
             System.out.print((i + 1) + ( (i + 1) < 10 ? "  " : " ") 
