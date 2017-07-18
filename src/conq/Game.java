@@ -985,6 +985,10 @@ public class Game implements java.io.Serializable{
                     else
                         civs[i].agressiveness = (double)agg/100;
                 }
+                if(landArea(i) < 5){
+                    civs[i].mil = 10 * landArea(i);
+                    civs[i].gold = 100 * landArea(i);
+                }
             }
             
         
@@ -1056,7 +1060,9 @@ public class Game implements java.io.Serializable{
     
     void roundUpdate(){
         for(int i = 0; i < trades.size(); i++){
-            if(trades.get(i).timer < 1)
+            if(trades.get(i).timer < 1 
+                    || landArea(trades.get(i).playerA) < 1
+                    || landArea(trades.get(i).playerB) < 1)
                 cancelTrade(i);
             else
                 trades.get(i).timer--;
@@ -1087,7 +1093,7 @@ public class Game implements java.io.Serializable{
             //Random rand = new Random();
             //building
             while(civs[player].gold >= 100){
-                if(civs[player].dGold < 30){
+                if(civs[player].dGold < 10){
                     chooseRandomSpotInNation(player);
                     if(map.map[lookY][lookX].buildings.charAt(0) == '-')
                         map.map[lookY][lookX].buildings = "^";
