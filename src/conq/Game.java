@@ -797,7 +797,7 @@ public class Game implements java.io.Serializable{
         double costFood = 2 - (civs[player].dFood + total)/total;
         double costGold = 2 - (civs[player].dGold + total)/total;
         double costMil = 2 - (civs[player].dMil + total)/total;
-        boolean canAfford = civs[player].dGold - 20 >= goldB && civs[player].dFood >= foodB && civs[player].dMil >= milB;
+        boolean canAfford = (goldB < 1 || civs[player].dGold - 20 >= goldB) && civs[player].dFood >= foodB && civs[player].dMil >= milB;
         return canAfford && costFood * foodA + costGold * goldA + costMil * milA >= costFood * foodB + costGold * goldB + costMil * milB;
     }
     
