@@ -1503,12 +1503,12 @@ public class Game implements java.io.Serializable{
                 mode = 1;
             if(input == '2')
                 mode = 2;
-            if(input == '3')
-                mode = 3;
-            if(input == 'l' && seeplayer < civs.length - 1)
-                seeplayer++;
-            if(input == 'k' && seeplayer > 0)
-                seeplayer--;
+//            if(input == '3')
+//                mode = 3;
+//            if(input == 'l' && seeplayer < civs.length - 1)
+//                seeplayer++;
+//            if(input == 'k' && seeplayer > 0)
+//                seeplayer--;
             
             }
         
@@ -1892,7 +1892,7 @@ public class Game implements java.io.Serializable{
         System.out.print("  " + (turnNum + 1) + "/" + numTurn);
         System.out.println();
         System.out.println("========================================================");
-        if(mode != 3){
+        //if(mode != 3){
             for(int i = 0; i < 18; i++){
                 if(showLooker)
                     map.displayLine(i, mode, x, y);
@@ -1903,17 +1903,17 @@ public class Game implements java.io.Serializable{
                 else
                     System.out.println("||");
             }
-        }else{
-            int[][] mat = safetyMap(player);
-            for(int i = 0; i < 18; i++){
-                for(int j = 0; j < 18; j++)
-                    System.out.print( (map.map[i][j].type == -1 ? c.BLUE : "") + mat[i][j] + " " + c.RESET);
-                if(i < list.length)
-                    System.out.println("||" + list[i]);
-                else
-                    System.out.println("||");
-            }
-        }
+//        }else{
+//            int[][] mat = safetyMap(player);
+//            for(int i = 0; i < 18; i++){
+//                for(int j = 0; j < 18; j++)
+//                    System.out.print( (map.map[i][j].type == -1 ? c.BLUE : "") + mat[i][j] + " " + c.RESET);
+//                if(i < list.length)
+//                    System.out.println("||" + list[i]);
+//                else
+//                    System.out.println("||");
+//            }
+//        }
         System.out.println("========================================================");
     }
     
