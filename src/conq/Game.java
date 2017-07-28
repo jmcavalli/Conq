@@ -44,7 +44,7 @@ public class Game implements java.io.Serializable{
     int lookY;
     int turnNum;
     int numTurn;
-    String fileName;
+    String fileName = "";
     Random rand1 = new Random();
     
     
@@ -155,7 +155,7 @@ public class Game implements java.io.Serializable{
     int chooseCapital(int player){
 
         if(!civs[player].human){
-            chooseRandomSpotInNation(player);
+            chooseRandomSafeSpotInNation(player);
             civs[player].capX = lookX;
             civs[player].capY = lookY;
             map.map[lookY][lookX].buildings = "*";
@@ -292,16 +292,20 @@ public class Game implements java.io.Serializable{
         }
         
         if(attacker[0] > defender[0])
-            civs[defendID].mil--;
+            //if(civs[defendID].mil > 0)
+                civs[defendID].mil--;
         else{
-            civs[attackID].mil--;
+            //if(civs[attackID].mil > 0)
+                civs[attackID].mil--;
             result++;
         }
         
         if(attacker[1] > defender[1])
-            civs[defendID].mil--;
+            //if(civs[defendID].mil > 0)
+                civs[defendID].mil--;
         else{
-            civs[attackID].mil--;
+            //if(civs[attackID].mil > 0)
+                civs[attackID].mil--;
             result++;
         }
             return result;
@@ -366,7 +370,7 @@ public class Game implements java.io.Serializable{
         
         }else{//Battling AI Player
             int cost = 0;
-            double calcCost = calcCost(defender, buildings);
+            double calcCost = calcCost(defender, buildings, false);
         int input = 0;
         Menu menu = new Menu();
         while(input != 'q'){
@@ -986,8 +990,9 @@ public class Game implements java.io.Serializable{
                         civs[i].agressiveness = (double)agg/100;
                 }
                 if(landArea(i) < 5){
-                    civs[i].mil = 10 * landArea(i);
-                    civs[i].gold = 100 * landArea(i);
+                    //civs[i].mil = 10 * landArea(i);
+                    //civs[i].gold = 100 * landArea(i);
+                    civs[i].agressiveness *= Math.pow(10, landArea(i) - 5);
                 }
             }
             
@@ -1094,7 +1099,7 @@ public class Game implements java.io.Serializable{
             //building
             while(civs[player].gold >= 100){
                 if(civs[player].dGold < 10){
-                    chooseRandomSpotInNation(player);
+                    chooseRandomSafeSpotInNation(player);
                     if(map.map[lookY][lookX].buildings.charAt(0) == '-')
                         map.map[lookY][lookX].buildings = "^";
                     else
@@ -1103,7 +1108,7 @@ public class Game implements java.io.Serializable{
                     civs[player].gold -= 100;
                 }else{
                     int choice = rand1.nextInt(3);
-                    chooseRandomSpotInNation(player);
+                    chooseRandomSafeSpotInNation(player);
                     switch(choice){
                         case 0: //farm
                             if(map.map[lookY][lookX].buildings.charAt(0) == '-')
@@ -1180,8 +1185,8 @@ public class Game implements java.io.Serializable{
                                 map.map[y][x].pol = Character.toLowerCase(civs[player].sym);
                             map.map[y][x].move = false;
                         }else if(rand.nextDouble() < civs[player].agressiveness){
-                            double calcCost = calcCost(player, map.map[y][x].buildings);
-                            double eCalcCost = calcCost(map.map[y][x].ownerID, map.map[y][x].buildings);
+                            double calcCost = calcCost(player, map.map[y][x].buildings, true);
+                            double eCalcCost = calcCost(map.map[y][x].ownerID, map.map[y][x].buildings, false);
                             if(eCalcCost < calcCost){
                                 //attack!
                                 int cost = 0;
@@ -1444,6 +1449,8 @@ public class Game implements java.io.Serializable{
     void lookAround(int player){
         int input = 0;
         int mode = 0;
+        int seeplayer = player;
+        Color c = new Color();
         Menu menu = new Menu();
             while(input != 'q'){
             menu.clearScreen();
@@ -1461,21 +1468,21 @@ public class Game implements java.io.Serializable{
                 "0- Political Mode",
                 "1- Building Mode",
                 "2- Military Mode",
+                "",//3-Safety Mode",
                 "",
-                "",
-                "",
-                "",
-                "",
+                "", //map.map[lookY][lookX].ownerID >= 0 ? ("CalcCost: " + calcCost(map.map[lookY][lookX].ownerID, map.map[lookY][lookX].buildings, false)) : "",
+                "", //map.map[lookY][lookX].ownerID >= 0 ? ("Current: " + c.GREEN + civs[map.map[lookY][lookX].ownerID].food + c.YELLOW + civs[map.map[lookY][lookX].ownerID].gold + c.RED + civs[map.map[lookY][lookX].ownerID].mil + c.RESET) : "",
+                "", //map.map[lookY][lookX].ownerID >= 0 ? ("Gain: " + c.GREEN + civs[map.map[lookY][lookX].ownerID].dFood + c.YELLOW + civs[map.map[lookY][lookX].ownerID].dGold + c.RED + civs[map.map[lookY][lookX].ownerID].dMil + c.RESET) : "",
                 "q- go back to menu"
                 };
-            Color c = new Color();
+            //Color c = new Color();
             if(map.map[lookY][lookX].type == -1)
                 sidemenu[0] = c.BLUE + "Water" + c.RESET;
             else if(map.map[lookY][lookX].type == 0)
                 sidemenu[0] = c.LCYAN + "Coastal" + c.RESET;
             else
                 sidemenu[0] = c.GREEN + "Land" + c.RESET;
-            display(player, sidemenu, mode, true, lookX, lookY);
+            display(seeplayer, sidemenu, mode, true, lookX, lookY);
             String input1 = System.console().readLine();
             if(input1.length() > 0)
                 input = input1.charAt(0);
@@ -1496,6 +1503,12 @@ public class Game implements java.io.Serializable{
                 mode = 1;
             if(input == '2')
                 mode = 2;
+            if(input == '3')
+                mode = 3;
+            if(input == 'l' && seeplayer < civs.length - 1)
+                seeplayer++;
+            if(input == 'k' && seeplayer > 0)
+                seeplayer--;
             
             }
         
@@ -1623,7 +1636,7 @@ public class Game implements java.io.Serializable{
                   || (X + 1 <= 17 && map.map[Y][X + 1].navyID == player && map.map[Y][X + 1].move)
                   || (Y - 1 >= 0 && map.map[Y - 1][X].navyID == player && map.map[Y - 1][X].move)
                   || (Y + 1 <= 17 && map.map[Y + 1][X].navyID == player && map.map[Y + 1][X].move)
-                  || (map.map[Y][X].navyID == player && map.map[Y + 1][X].move))){
+                  || (map.map[Y][X].navyID == player && map.map[Y][X].move))){
               
             return true;
         }else
@@ -1673,8 +1686,99 @@ public class Game implements java.io.Serializable{
         return total;
     }
     
-    double calcCost(int player, String buildings){
-        double calcCost = (double)civs[player].mil/(double)(landArea(player) + totalBuildings(player));
+    int[][] safetyMap(int player){
+        int[][] safe = new int[18][18];
+        int[][] danger = new int[18][18];
+        
+        for(int i = 0; i < 18; i++)
+            for(int j = 0; j < 18; j++)
+                if(map.map[i][j].ownerID >0 && map.map[i][j].ownerID != player)
+                    danger[i][j] = 1;
+                else
+                    danger[i][j] = 0;
+        
+        for(int k = 0; k < 36; k++){
+            for(int i = 0; i < 18; i++)
+                for(int j = 0; j < 18; j++)
+                    if(danger[i][j] == 0 && map.map[i][j].type != -1 &&
+                            ( (j > 0 && danger[i][j - 1] == 1)
+                            || (j < 17 && danger[i][j + 1] >= 1)
+                            || (i > 0 && danger[i - 1][j] >= 1)
+                            || (i < 17 && danger[i + 1][j] >= 1)))
+                        danger[i][j] = 1;
+        }
+        
+        for(int i = 0; i < 18; i++)
+            for(int j = 0; j < 18; j++)
+                if(map.map[i][j].ownerID == player)
+                    safe[i][j] = 1;
+                else
+                    safe[i][j] = 0;
+        
+        boolean done = false;
+        int level = 1;
+        
+        while(!done && level < 36){
+            done = true;
+            for(int x = 0; x < 18; x++)
+                for(int y = 0; y < 18; y++)
+                    if(safe[y][x] == level
+                            && (x == 0 || map.map[y][x - 1].ownerID < 0)
+                            && (x == 17 || map.map[y][x + 1].ownerID < 0)
+                            && (y == 0 || map.map[y - 1][x].ownerID < 0)
+                            && (y == 17 || map.map[y + 1][x].ownerID < 0)){
+                        safe[y][x] = 1;
+                        continue;
+                    }
+                    else if(safe[y][x] == level && danger[y][x] == 1
+                            && (x == 0 || safe[y][x - 1] >= level || map.map[y][x - 1].ownerID < 0)
+                            && (x == 17 || safe[y][x + 1] >= level || map.map[y][x + 1].ownerID < 0)
+                            && (y == 0 || safe[y - 1][x] >= level  || map.map[y - 1][x].ownerID < 0)
+                            && (y == 17 || safe[y + 1][x] >= level || map.map[y + 1][x].ownerID < 0)){
+                        done = false;
+                        safe[y][x] = level + 1;
+                    }else if(safe[y][x] == level && danger[y][x] == 0
+                            && (x == 0 || safe[y][x - 1] >= level)
+                            && (x == 17 || safe[y][x + 1] >= level)
+                            && (y == 0 || safe[y - 1][x] >= level)
+                            && (y == 17 || safe[y + 1][x] >= level)){
+                        done = false;
+                        safe[y][x] = level + 1;
+                    }
+            level++;
+        }
+        
+        return safe;
+    }
+    
+    int findHighestonMap(int[][] mat){
+        int max = 0;
+        
+        for(int i = 0; i < 17; i++)
+            for(int j = 0; j < 17; j++)
+                if(mat[i][j] > max)
+                    max = mat[i][j];
+        
+        return max;
+    }
+    
+    int findNumonMap(int[][] mat, int num){
+        int total = 0;
+        
+        for(int i = 0; i < 17; i++)
+            for(int j = 0; j < 17; j++)
+                if(mat[i][j] == num)
+                    total++;
+        
+        return total;
+    }
+    
+    double calcCost(int player, String buildings, boolean attack){
+        int[][] mat = safetyMap(player);
+        int depth = findHighestonMap(mat) - 1;
+        
+        double calcCost = ((double)civs[player].mil + (double)(depth * civs[player].dMil))/(double)(landArea(player) + (attack ? 1 : 0) + totalBuildings(player));      
+        //double calcCost = ((double)civs[player].mil)/(double)(landArea(player) + (attack ? 1 : 0) + totalBuildings(player));
             calcCost += (buildings.charAt(0) == '*' ? calcCost : 0)  
                     + calcCost*((double)numFarms(buildings))
                     + calcCost*((double)numMines(buildings))
@@ -1743,6 +1847,28 @@ public class Game implements java.io.Serializable{
         }
     }
     
+    void chooseRandomSafeSpotInNation(int player){
+        //Random rand = new Random();
+        int[][] mat = safetyMap(player);
+        int max = findHighestonMap(mat);
+        int num = findNumonMap(mat, max);
+        
+        int spot = rand1.nextInt(num) + 1;
+        
+        for(lookX = 0; lookX < 18; lookX++){
+            for(lookY = 0; lookY < 18; lookY++){
+                if(mat[lookY][lookX] == max)
+                    spot--;
+                if(spot < 1)
+                    break;
+            }
+            if(lookY < 18 && mat[lookY][lookX] == max)
+                spot--;
+            if(spot < 1)
+                break;
+        }
+    }
+    
     void display(int player, String[] list, int mode, boolean showLooker, int x, int y){
         Color c = new Color();
         System.out.println(c.civColor(player) + civs[player].name + c.RESET);
@@ -1766,15 +1892,27 @@ public class Game implements java.io.Serializable{
         System.out.print("  " + (turnNum + 1) + "/" + numTurn);
         System.out.println();
         System.out.println("========================================================");
-        for(int i = 0; i < 18; i++){
-            if(showLooker)
-                map.displayLine(i, mode, x, y);
-            else
-                map.displayLine(i, mode);
-            if(i < list.length)
-                System.out.println("||" + list[i]);
-            else
-                System.out.println("||");
+        if(mode != 3){
+            for(int i = 0; i < 18; i++){
+                if(showLooker)
+                    map.displayLine(i, mode, x, y);
+                else
+                    map.displayLine(i, mode);
+                if(i < list.length)
+                    System.out.println("||" + list[i]);
+                else
+                    System.out.println("||");
+            }
+        }else{
+            int[][] mat = safetyMap(player);
+            for(int i = 0; i < 18; i++){
+                for(int j = 0; j < 18; j++)
+                    System.out.print( (map.map[i][j].type == -1 ? c.BLUE : "") + mat[i][j] + " " + c.RESET);
+                if(i < list.length)
+                    System.out.println("||" + list[i]);
+                else
+                    System.out.println("||");
+            }
         }
         System.out.println("========================================================");
     }

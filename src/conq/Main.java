@@ -28,6 +28,7 @@ public class Main {
         while(ans != 4){
         ans = mainmenu.disMainMenu();
         
+        try{
         switch(ans){
             case 1:
                 newGame(loader);
@@ -41,6 +42,11 @@ public class Main {
             case 4:
                 quit();
                 break;
+        }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            System.console().readLine();
         }
         }
         
