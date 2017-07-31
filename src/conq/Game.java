@@ -1108,31 +1108,59 @@ public class Game implements java.io.Serializable{
                     civs[player].gold -= 100;
                 }else{
                     int choice = rand1.nextInt(3);
+                    double prob = rand1.nextDouble();
                     chooseRandomSafeSpotInNation(player);
                     switch(choice){
                         case 0: //farm
-                            if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                map.map[lookY][lookX].buildings = "#";
-                            else
-                                map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
-                            civs[player].dFood += 10;
-                            civs[player].gold -= 100;
+                            if(prob < civs[player].agressiveness){
+                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                    map.map[lookY][lookX].buildings = "@";
+                                else
+                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
+                                civs[player].dMil += 10;
+                                civs[player].gold -= 100;
+                            }else{
+                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                    map.map[lookY][lookX].buildings = "#";
+                                else
+                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
+                                civs[player].dFood += 10;
+                                civs[player].gold -= 100;
+                            }
                             break;
                         case 1: //mine
-                            if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                map.map[lookY][lookX].buildings = "^";
-                            else
-                                map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("^");
-                            civs[player].dGold += 10;
-                            civs[player].gold -= 100;
+                            if(prob < civs[player].agressiveness){
+                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                    map.map[lookY][lookX].buildings = "@";
+                                else
+                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
+                                civs[player].dMil += 10;
+                                civs[player].gold -= 100;
+                            }else{
+                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                    map.map[lookY][lookX].buildings = "^";
+                                else
+                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("^");
+                                civs[player].dGold += 10;
+                                civs[player].gold -= 100;
+                            }
                             break;
                         case 2: //base
-                            if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                map.map[lookY][lookX].buildings = "@";
-                            else
-                                map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
-                            civs[player].dMil += 10;
-                            civs[player].gold -= 100;
+                            if(prob > civs[player].agressiveness){
+                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                    map.map[lookY][lookX].buildings = "@";
+                                else
+                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
+                                civs[player].dMil += 10;
+                                civs[player].gold -= 100;
+                            }else{
+                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                    map.map[lookY][lookX].buildings = "#";
+                                else
+                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
+                                civs[player].dFood += 10;
+                                civs[player].gold -= 100;
+                            }
                             break;
                         default:
                     }
@@ -1194,7 +1222,7 @@ public class Game implements java.io.Serializable{
                                 int batCost = 0;
                                 while(civs[player].mil >= 2 && cost < calcCost){
                                     
-                                    if(!civs[map.map[y][x].ownerID].human && eCost > eCalcCost){
+                                    if(!civs[map.map[y][x].ownerID].human && (eCost > eCalcCost || civs[map.map[y][x].ownerID].mil <= 1)){
                                         getTerr(player, x, y);
                                         break;
                                     }else if(civs[map.map[y][x].ownerID].human){
@@ -1282,6 +1310,10 @@ public class Game implements java.io.Serializable{
                                     map.map[j][i].navyID = player;
                                 }else{
                                     int res = attackRound(player, map.map[j][i].navyID, false);
+                                    if(civs[map.map[j][i].navyID].mil < 0)
+                                        civs[map.map[j][i].navyID].mil = 0;
+                                    if(civs[player].mil < 0)
+                                        civs[player].mil = 0;
                                     if(res == 0){
                                         map.map[y][x].navyID = -1;
                                         map.map[j][i].navyID = player;
