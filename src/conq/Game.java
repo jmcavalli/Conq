@@ -241,18 +241,18 @@ public class Game implements java.io.Serializable{
         else
             map.map[terrY][terrX].pol = Character.toLowerCase(civs[recieverID].sym);
         map.map[terrY][terrX].move = false;
-        civs[previous].dFood -= numFarms(map.map[terrY][terrX].buildings) * 10;
-        civs[recieverID].dFood += numFarms(map.map[terrY][terrX].buildings) * 10;
+        civs[previous].dFood -= numFarms(map.map[terrY][terrX].buildings) * civs[previous].farmOut;
+        civs[recieverID].dFood += numFarms(map.map[terrY][terrX].buildings) * civs[recieverID].farmOut;
         
-        civs[previous].dGold -= numMines(map.map[terrY][terrX].buildings) * 10;
-        civs[recieverID].dGold += numMines(map.map[terrY][terrX].buildings) * 10;
+        civs[previous].dGold -= numMines(map.map[terrY][terrX].buildings) * civs[previous].mineOut;
+        civs[recieverID].dGold += numMines(map.map[terrY][terrX].buildings) * civs[recieverID].mineOut;
         
-        civs[previous].dMil -= numBases(map.map[terrY][terrX].buildings) * 10;
-        civs[recieverID].dMil += numBases(map.map[terrY][terrX].buildings) * 10;
+        civs[previous].dMil -= numBases(map.map[terrY][terrX].buildings) * civs[previous].baseOut;
+        civs[recieverID].dMil += numBases(map.map[terrY][terrX].buildings) * civs[recieverID].baseOut;
         
         if(map.map[terrY][terrX].buildings.contains("*")){
-            civs[recieverID].bonusPoints += 20;
-            civs[previous].bonusPoints -= 20;
+            civs[recieverID].bonusPoints += civs[recieverID].capitalPoints;
+            civs[previous].bonusPoints -= civs[previous].capitalPoints;
         }
     }
     
@@ -264,8 +264,8 @@ public class Game implements java.io.Serializable{
         return ans;
     }
     int attackRound(int attackID, int defendID, boolean fort){
-        int [] attacker = {dieRoll(6), dieRoll(6), dieRoll(6)};
-        int [] defender = {dieRoll(6), dieRoll(6)};
+        int [] attacker = {dieRoll(civs[attackID].dieSides) + civs[attackID].attackBonus1, dieRoll(civs[attackID].dieSides)  + civs[attackID].attackBonus2, dieRoll(civs[attackID].dieSides) + civs[attackID].attackBonus3};
+        int [] defender = {dieRoll(civs[defendID].dieSides)  + civs[defendID].defendBonus1, dieRoll(civs[defendID].dieSides) + civs[defendID].defendBonus2};
         int result = 0; //0- defender loses 2, 1- attacker and defender lose 1, 2- attacker loses 2
         
         if(fort){
@@ -322,11 +322,11 @@ public class Game implements java.io.Serializable{
                 "BATTLE",
                 "Buildings: " + buildings,
                 map.map[lookY][lookX].ownerID >= 0 ? "Controlled by: " + civs[map.map[lookY][lookX].ownerID].name : "No controller",
-                c.LRED + "Attacker's Units: " + civs[attacker].mil,
+                c.LRED + "Attacker's Units: " + civs[attacker].mil + c.RESET,
                 c.LGREEN + "Defender's Units: " + civs[defender].mil + c.RESET,
-                "", 
-                "", 
-                "", 
+                "",
+                c.RED + "Attack Bonuses: " + civs[attacker].attackBonus1 + " " + civs[attacker].attackBonus2 + " " + civs[attacker].attackBonus3 + c.RESET,
+                c.GREEN + "Defense Bonuses: " + civs[defender].defendBonus1 + " " + civs[defender].defendBonus2 + c.RESET,
                 "",
                 "",
                 "",
@@ -381,15 +381,15 @@ public class Game implements java.io.Serializable{
                 "",
                 map.map[lookY][lookX].ownerID >= 0 ? "Controlled by: " + civs[map.map[lookY][lookX].ownerID].name : "No controller",
                 "Buildings: " + map.map[lookY][lookX].buildings,
-                c.LRED + "Attacker's Units: " + civs[attacker].mil,
+                c.LRED + "Attacker's Units: " + civs[attacker].mil + c.RESET,
                 c.LGREEN + "Defender's Units: " + civs[defender].mil + c.RESET,
-                "", 
-                "", 
                 "",
+                c.LRED + " Attack Bonuses: " + civs[attacker].attackBonus1 + " " + civs[attacker].attackBonus2 + " " + civs[attacker].attackBonus3 + c.RESET,
+                c.LGREEN + " Defense Bonuses: " + civs[defender].defendBonus1 + " " + civs[defender].defendBonus2 + c.RESET,
                 "",
                 "",
                 c.LRED + "a- ATTACK" + c.RESET,
-                "",
+                c.RED + "f- Attack until retreat" + c.RESET,
                 "",
                 "",
                 "",
@@ -423,6 +423,23 @@ public class Game implements java.io.Serializable{
 
                 if(cost > calcCost)
                     return true;
+            }
+            if(input == 'f'){
+                if(civs[defender].mil < 2)
+                        return true;
+                
+                while(civs[attacker].mil >= 2 && civs[defender].mil >= 2 && cost <= calcCost){
+                    if(civs[defender].mil < 2)
+                        return true;
+
+                    cost += 2 - attackRound(attacker, defender, base);
+
+                    if(civs[attacker].mil < 2)
+                        return false;
+
+                    if(cost > calcCost)
+                        return true;
+                }
             }
             if(input == 'q')
                 return false;
@@ -525,22 +542,22 @@ public class Game implements java.io.Serializable{
                 "d- right", 
                 "s- down", 
                 "a- left",
-                (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= 100
+                (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= civs[player].farmCost
                     && map.map[lookY][lookX].type != -1 
                     ? (c.LGREEN + "#- Farm" + c.RESET)
-                    : (c.RED + "#- Farm (100 gold)" + c.RESET)),
-                (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= 100
+                    : (c.RED + "#- Farm (" + civs[player].farmCost + " gold)" + c.RESET)),
+                (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= civs[player].mineCost
                     && map.map[lookY][lookX].type != -1 
                     ? (c.LYELLOW + "^- Mine" + c.RESET)
-                    : (c.RED + "^- Mine (100 gold)" + c.RESET)),
-                (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= 100
+                    : (c.RED + "^- Mine (" + civs[player].mineCost + " gold)" + c.RESET)),
+                (map.map[lookY][lookX].ownerID == player  && civs[player].gold >= civs[player].baseCost
                     && map.map[lookY][lookX].type != -1 
                     ? (c.LRED + "@- Fort (Make navies in nearby sea)" + c.RESET)
-                    : (c.RED + "@- Fort (100 gold)" + c.RESET)),
+                    : (c.RED + "@- Fort (" + civs[player].baseCost + " gold)" + c.RESET)),
                 (canBuildNavy(player, lookX, lookY)   && map.map[lookY][lookX].navyID == -1
                     && civs[player].gold >= 10
                     ? (c.LBLUE + "n- Navy" + c.RESET)
-                    : (c.RED + "n- Navy (10 gold)" + c.RESET)),
+                    : (c.RED + "n- Navy (" + civs[player].navyCost + " gold)" + c.RESET)),
                 "",
                 "",
                 "",
@@ -570,39 +587,39 @@ public class Game implements java.io.Serializable{
             if(input == 'a')
                 moveLooker(3);
             if(input == '#'){
-                if(map.map[lookY][lookX].ownerID == player && civs[player].gold >= 100){
+                if(map.map[lookY][lookX].ownerID == player && civs[player].gold >= civs[player].farmCost){
                     if(map.map[lookY][lookX].buildings.charAt(0) == '-')
                         map.map[lookY][lookX].buildings = "#";
                     else
                         map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
-                    civs[player].dFood += 10;
-                    civs[player].gold -= 100;
+                    civs[player].dFood += civs[player].farmOut;
+                    civs[player].gold -= civs[player].farmCost;
                 }
             }
             if(input == '^'){
-                if(map.map[lookY][lookX].ownerID == player && civs[player].gold >= 100){
+                if(map.map[lookY][lookX].ownerID == player && civs[player].gold >= civs[player].mineCost){
                     if(map.map[lookY][lookX].buildings.charAt(0) == '-')
                         map.map[lookY][lookX].buildings = "^";
                     else
                         map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("^");
-                    civs[player].dGold += 10;
-                    civs[player].gold -= 100;
+                    civs[player].dGold += civs[player].mineOut;
+                    civs[player].gold -= civs[player].mineCost;
                 }
             }
             if(input == '@'){
-                if(map.map[lookY][lookX].ownerID == player && civs[player].gold >= 100){
+                if(map.map[lookY][lookX].ownerID == player && civs[player].gold >= civs[player].baseCost){
                     if(map.map[lookY][lookX].buildings.charAt(0) == '-')
                         map.map[lookY][lookX].buildings = "@";
                     else
                         map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
-                    civs[player].dMil += 10;
-                    civs[player].gold -= 100;
+                    civs[player].dMil += civs[player].baseOut;
+                    civs[player].gold -= civs[player].baseCost;
                 }
             }
             if(input == 'n'){
-                if(map.map[lookY][lookX].type == -1 && map.map[lookY][lookX].navyID == -1 && civs[player].gold >= 10){
+                if(map.map[lookY][lookX].type == -1 && map.map[lookY][lookX].navyID == -1 && civs[player].gold >= civs[player].navyCost){
                     map.map[lookY][lookX].navyID = player;
-                    civs[player].gold -= 10;
+                    civs[player].gold -= civs[player].navyCost;
                 }
             }
             
@@ -736,7 +753,7 @@ public class Game implements java.io.Serializable{
                 if(map.map[lookY][lookX].navyID == player && map.map[lookY][lookX].move){
                     int navX = lookX;
                     int navY = lookY;
-                    int limit = 3;
+                    int limit = civs[player].navyLimit;
                     moveNavy(player, navX, navY, limit);
                 }
             }
@@ -801,7 +818,7 @@ public class Game implements java.io.Serializable{
         double costFood = 2 - (civs[player].dFood + total)/total;
         double costGold = 2 - (civs[player].dGold + total)/total;
         double costMil = 2 - (civs[player].dMil + total)/total;
-        boolean canAfford = (goldB < 1 || civs[player].dGold - 20 >= goldB) && civs[player].dFood >= foodB && civs[player].dMil >= milB;
+        boolean canAfford = (goldB < 1 || civs[player].dGold - civs[player].incomeMin >= goldB) && civs[player].dFood >= foodB && civs[player].dMil >= milB;
         return canAfford && costFood * foodA + costGold * goldA + costMil * milA >= costFood * foodB + costGold * goldB + costMil * milB;
     }
     
@@ -992,7 +1009,9 @@ public class Game implements java.io.Serializable{
                 if(landArea(i) < 5){
                     //civs[i].mil = 10 * landArea(i);
                     //civs[i].gold = 100 * landArea(i);
-                    civs[i].agressiveness *= Math.pow(10, landArea(i) - 5);
+                    //civs[i].agressiveness *= Math.pow(10, landArea(i) - 5);
+                    if(!ran)
+                        civs[i].agressiveness /= 10;
                 }
             }
             
@@ -1097,15 +1116,15 @@ public class Game implements java.io.Serializable{
             //AI goes HERE!
             //Random rand = new Random();
             //building
-            while(civs[player].gold >= 100){
-                if(civs[player].dGold < 10){
+            while(civs[player].gold >= civs[player].farmCost || civs[player].gold >= civs[player].mineCost || civs[player].gold >= civs[player].baseCost){
+                if(civs[player].dGold < civs[player].incomeMin && civs[player].gold >= civs[player].mineCost){
                     chooseRandomSafeSpotInNation(player);
                     if(map.map[lookY][lookX].buildings.charAt(0) == '-')
                         map.map[lookY][lookX].buildings = "^";
                     else
                         map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("^");
-                    civs[player].dGold += 10;
-                    civs[player].gold -= 100;
+                    civs[player].dGold += civs[player].mineOut;
+                    civs[player].gold -= civs[player].mineCost;
                 }else{
                     int choice = rand1.nextInt(3);
                     double prob = rand1.nextDouble();
@@ -1113,53 +1132,65 @@ public class Game implements java.io.Serializable{
                     switch(choice){
                         case 0: //farm
                             if(prob < civs[player].agressiveness){
-                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                    map.map[lookY][lookX].buildings = "@";
-                                else
-                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
-                                civs[player].dMil += 10;
-                                civs[player].gold -= 100;
+                                if(civs[player].gold >= civs[player].baseCost){
+                                    if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                        map.map[lookY][lookX].buildings = "@";
+                                    else
+                                        map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
+                                    civs[player].dMil += civs[player].baseOut;
+                                    civs[player].gold -= civs[player].baseCost;
+                                }
                             }else{
-                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                    map.map[lookY][lookX].buildings = "#";
-                                else
-                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
-                                civs[player].dFood += 10;
-                                civs[player].gold -= 100;
+                                if(civs[player].gold >= civs[player].farmCost){
+                                    if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                        map.map[lookY][lookX].buildings = "#";
+                                    else
+                                        map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
+                                    civs[player].dFood += civs[player].farmOut;
+                                    civs[player].gold -= civs[player].farmCost;
+                                }
                             }
                             break;
                         case 1: //mine
                             if(prob < civs[player].agressiveness){
-                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                    map.map[lookY][lookX].buildings = "@";
-                                else
-                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
-                                civs[player].dMil += 10;
-                                civs[player].gold -= 100;
+                                if(civs[player].gold >= civs[player].baseCost){
+                                    if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                        map.map[lookY][lookX].buildings = "@";
+                                    else
+                                        map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
+                                    civs[player].dMil += civs[player].baseOut;
+                                    civs[player].gold -= civs[player].baseCost;
+                                }
                             }else{
-                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                    map.map[lookY][lookX].buildings = "^";
-                                else
-                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("^");
-                                civs[player].dGold += 10;
-                                civs[player].gold -= 100;
+                                if(civs[player].gold >= civs[player].mineCost){
+                                    if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                        map.map[lookY][lookX].buildings = "^";
+                                    else
+                                        map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("^");
+                                    civs[player].dGold += civs[player].mineOut;
+                                    civs[player].gold -= civs[player].mineCost;
+                                }
                             }
                             break;
                         case 2: //base
                             if(prob > civs[player].agressiveness){
-                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                    map.map[lookY][lookX].buildings = "@";
-                                else
-                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
-                                civs[player].dMil += 10;
-                                civs[player].gold -= 100;
+                                if(civs[player].gold >= civs[player].baseCost){
+                                    if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                        map.map[lookY][lookX].buildings = "@";
+                                    else
+                                        map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("@");
+                                    civs[player].dMil += civs[player].baseOut;
+                                    civs[player].gold -= civs[player].baseCost;
+                                }
                             }else{
-                                if(map.map[lookY][lookX].buildings.charAt(0) == '-')
-                                    map.map[lookY][lookX].buildings = "#";
-                                else
-                                    map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
-                                civs[player].dFood += 10;
-                                civs[player].gold -= 100;
+                                if(civs[player].gold >= civs[player].farmCost){
+                                    if(map.map[lookY][lookX].buildings.charAt(0) == '-')
+                                        map.map[lookY][lookX].buildings = "#";
+                                    else
+                                        map.map[lookY][lookX].buildings = map.map[lookY][lookX].buildings.concat("#");
+                                    civs[player].dFood += civs[player].farmOut;
+                                    civs[player].gold -= civs[player].farmCost;
+                                }
                             }
                             break;
                         default:
@@ -1167,7 +1198,7 @@ public class Game implements java.io.Serializable{
                 }
             }
             
-            if(civs[player].gold >= 10 && numNavies(player) < 3){//navies
+            if(civs[player].gold >= civs[player].navyCost && numNavies(player) < civs[player].navyMin){//navies
                 int total = 0;
                 for(int i = 0; i < 18; i++){
                     for(int j = 0; j < 18; j++){
@@ -1192,7 +1223,7 @@ public class Game implements java.io.Serializable{
                     }
                     if(j < 18 && total > 0 && num < 1 && canBuildNavy(player, i, j)){
                         map.map[j][i].navyID = player;
-                        civs[player].gold -= 10;
+                        civs[player].gold -= civs[player].navyCost;
                         break;
                     }
                 }
@@ -1229,16 +1260,18 @@ public class Game implements java.io.Serializable{
                                         menu.clearScreen();
                                         int input = 0;
                                         Color c = new Color();
+                                        int attacker = player;
+                                        int defender = map.map[y][x].ownerID;
                                         while(input == 0){
                                         String[] sidemenu = {
                                             "DEFENDING against " + c.civColor(player) + civs[player].name + c.RESET,
                                             "",
                                             "Buildings: " + map.map[y][x].buildings,
-                                            c.LRED + "Attacker's Units: " + civs[player].mil,
-                                            c.LGREEN + "Defender's Units: " + civs[map.map[y][x].ownerID].mil + c.RESET,
+                                            c.LRED + "Attacker's Units: " + civs[attacker].mil + c.RESET,
+                                            c.LGREEN + "Defender's Units: " + civs[defender].mil + c.RESET,
                                             "",
-                                            "",
-                                            "",
+                                            c.RED + "Attack Bonuses: " + civs[attacker].attackBonus1 + " " + civs[attacker].attackBonus2 + " " + civs[attacker].attackBonus3 + c.RESET,
+                                            c.GREEN + "Defense Bonuses: " + civs[defender].defendBonus1 + " " + civs[defender].defendBonus2 + c.RESET,
                                             "",
                                             c.GREEN + "d- defend",
                                             c.WHITE + "r- retreat",
@@ -1248,7 +1281,7 @@ public class Game implements java.io.Serializable{
                                             "",
                                             "",
                                             "",
-                                            "",
+                                            ""
                                             };
                                         display(map.map[y][x].ownerID, sidemenu, 2, true, x, y);
                                         String input1 = System.console().readLine();
@@ -1287,7 +1320,7 @@ public class Game implements java.io.Serializable{
                         int total = 0;
                         for(int i = 0; i < 18; i++){
                             for(int j = 0; j < 18; j++){
-                                if(map.connectedByWater(x, y, i, j, 3))
+                                if(map.connectedByWater(x, y, i, j, civs[player].navyLimit))
                                     total++;
                             }
                         }
@@ -1297,14 +1330,14 @@ public class Game implements java.io.Serializable{
                         int i, j;
                         for(i = 0; i < 18; i++){
                             for(j = 0; j < 18; j++){
-                                if(map.connectedByWater(x, y, i, j, 3)){
+                                if(map.connectedByWater(x, y, i, j, civs[player].navyLimit)){
                                     move--;
                                     if(move < 1){
                                         break;
                                     }
                                 }
                             }
-                            if(j < 18 && total > 0 && move < 1 && map.connectedByWater(x, y, i, j, 3)){
+                            if(j < 18 && total > 0 && move < 1 && map.connectedByWater(x, y, i, j, civs[player].navyLimit)){
                                 if(map.map[j][i].navyID < 0){
                                     map.map[y][x].navyID = -1;
                                     map.map[j][i].navyID = player;
@@ -1386,7 +1419,7 @@ public class Game implements java.io.Serializable{
     
     int countPoints(int player){
         return civs[player].food + civs[player].bonusPoints 
-                + (mostIncome(player) ? 50 : 0) + (mostLand(player) ? 50 : 0);
+                + (mostIncome(player) ? civs[player].mostIncomeBonus : 0) + (mostLand(player) ? civs[player].mostLandBonus : 0);
     }
     
     boolean mostIncome(int player){
@@ -1742,7 +1775,7 @@ public class Game implements java.io.Serializable{
         
         for(int i = 0; i < 18; i++)
             for(int j = 0; j < 18; j++)
-                if(map.map[i][j].ownerID == player)
+                if(map.map[i][j].type != -1 && map.map[i][j].ownerID == player)
                     safe[i][j] = 1;
                 else
                     safe[i][j] = 0;
@@ -1786,8 +1819,8 @@ public class Game implements java.io.Serializable{
     int findHighestonMap(int[][] mat){
         int max = 0;
         
-        for(int i = 0; i < 17; i++)
-            for(int j = 0; j < 17; j++)
+        for(int i = 0; i < 18; i++)
+            for(int j = 0; j < 18; j++)
                 if(mat[i][j] > max)
                     max = mat[i][j];
         
@@ -1797,8 +1830,8 @@ public class Game implements java.io.Serializable{
     int findNumonMap(int[][] mat, int num){
         int total = 0;
         
-        for(int i = 0; i < 17; i++)
-            for(int j = 0; j < 17; j++)
+        for(int i = 0; i < 18; i++)
+            for(int j = 0; j < 18; j++)
                 if(mat[i][j] == num)
                     total++;
         
