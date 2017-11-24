@@ -2183,7 +2183,16 @@ public class Game implements java.io.Serializable{
         temp.mostIncomeBonus = civs[id].mostIncomeBonus;
         temp.mostLandBonus = civs[id].mostLandBonus;
         
-        temp.name = "Rebel " + civs[id].name;
+        if(era.matches("BC") || year < 500)
+            temp.name = "Rebel " + civs[id].name;
+        else if(year < 1600)
+            temp.name = "New " + civs[id].name;
+        else if(year < 1848)
+            temp.name = "Democratic " + civs[id].name;
+        else{
+            temp.name = "Communist " + civs[id].name;
+            temp.attr.add("Communist");
+        }
         
         if(rebel < 26 && rebel != 23)
             temp.sym = (char)('A' + rebel);
