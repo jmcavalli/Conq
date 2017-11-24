@@ -1102,19 +1102,19 @@ public class Game implements java.io.Serializable{
             }
             
             for(int i = 0; i < civs.length;i++){
-                if(!civs[i].human){
+                //if(!civs[i].human){
                     if (ran)
                         civs[i].agressiveness = rand.nextDouble();
                     else
                         civs[i].agressiveness = (double)agg/100;
-                }
-                if(landArea(i) < 5){
-                    //civs[i].mil = 10 * landArea(i);
-                    //civs[i].gold = 100 * landArea(i);
+                //}
+                //if(landArea(i) < 5){
+                    //civs[i].mil = 50 + 10 * landArea(i);
+                    //civs[i].gold = 500 + 100 * landArea(i)/20;
                     //civs[i].agressiveness *= Math.pow(10, landArea(i) - 5);
-                    if(!ran)
+                    if(!ran && landArea(i) < 5)
                         civs[i].agressiveness /= 10;
-                }
+                //}
             }
             
         
@@ -1130,7 +1130,16 @@ public class Game implements java.io.Serializable{
             }
         
         while(turnNum < numTurn){
-            roundUpdate();
+            if(turnNum != 0)
+                roundUpdate();
+            
+            for(int i = 0; i < civs.length;i++){
+                int num = rand.nextInt(100);
+                if(num < civs[i].rebels){
+                    civilWar(i, ((double)civs[i].rebels)/100, true);
+                    civs[i].rebels = 0;
+                }
+            }
             
             for(int i = 0; i < players.length; i++){
                 playerID = i;
@@ -1143,6 +1152,9 @@ public class Game implements java.io.Serializable{
                 if(!civs[i].human)
                     takeTurn(i);
             }
+            
+            
+            
             yearIncrement();
             turnNum++;
         }
@@ -1152,6 +1164,7 @@ public class Game implements java.io.Serializable{
     
     void playFromSave(){
         int input = 0;
+        Random rand = new Random();
         
         for(int i = playerID; i < players.length; i++){
                 playerID = i;
@@ -1169,7 +1182,16 @@ public class Game implements java.io.Serializable{
         
         
         while(turnNum < numTurn){
-            roundUpdate();
+            if(turnNum != 0)
+                roundUpdate();
+            
+            for(int i = 0; i < civs.length;i++){
+                int num = rand.nextInt(100);
+                if(num < civs[i].rebels){
+                    civilWar(i, ((double)civs[i].rebels)/100, false);
+                    civs[i].rebels = 0;
+                }
+            }
             
             for(int i = 0; i < players.length; i++){
                 playerID = i;
@@ -1182,6 +1204,9 @@ public class Game implements java.io.Serializable{
                 if(!civs[i].human)
                     takeTurn(i);
             }
+            
+            
+            
             yearIncrement();
             turnNum++;
         }
@@ -1204,6 +1229,14 @@ public class Game implements java.io.Serializable{
             civs[i].food += civs[i].dFood;
             civs[i].gold += civs[i].dGold;
             civs[i].mil += civs[i].dMil;
+        }
+        
+        for(int i = 0; i < civs.length; i++){
+            civs[i].rebels += landArea(i)/4 - civs[i].dFood;
+            if(civs[i].rebels > 100)
+                civs[i].rebels = 100;
+            if(civs[i].rebels < 0)
+                civs[i].rebels = 0;
         }
         
         for(int x = 0; x < 18; x++){
@@ -1481,6 +1514,7 @@ public class Game implements java.io.Serializable{
         lookX = civs[player].capX;
         lookY = civs[player].capY;
         int input = 0;
+        Color c = new Color();
         
         //String[] sidemenu = {"w- up", "d- right", "s- down", "a- left"};
             while(input != 'z'){
@@ -1492,6 +1526,7 @@ public class Game implements java.io.Serializable{
                 "c- conquer",
                 "n- move navy",
                 "v- view nations",
+                "r- deal with rebels " + c.YELLOW + "(10)" + c.RESET + " (R- use force " + c.RED + "(10)" + c.RESET + ")",
                 "",
                 "",
                 "",
@@ -1501,8 +1536,7 @@ public class Game implements java.io.Serializable{
                 "",
                 "",
                 "",
-                "",
-                "z-end turn",
+                "z-end turn (Z- drop out)",
                 "q-save and quit game",
                 };
             display(player, sidemenu, 0, false, lookX, lookY);
@@ -1525,6 +1559,22 @@ public class Game implements java.io.Serializable{
                 conductTrade(player);
             if(input == 'v')
                 viewNations(player);
+            if(input == 'r'){
+                if(civs[player].gold >= 10){
+                    civs[player].gold -= 10;
+                    civs[player].rebels -= 10;
+                }
+            }
+            if(input == 'R'){
+                if(civs[player].mil >= 10){
+                    civs[player].mil -= 10;
+                    civs[player].rebels -= 10;
+                }
+            }
+            if(input == 'Z'){
+                civs[player].human = false;
+                input = 'z';
+            }
             if(input == 'q')
                 return 1;
             
@@ -1654,7 +1704,7 @@ public class Game implements java.io.Serializable{
                 "1- Building Mode",
                 "2- Military Mode",
                 "3- Culture Mode",//3-Safety Mode",
-                "",
+                "4- Physical Mode",
                 "", //map.map[lookY][lookX].ownerID >= 0 ? ("CalcCost: " + calcCost(map.map[lookY][lookX].ownerID, map.map[lookY][lookX].buildings, false)) : "",
                 "", //map.map[lookY][lookX].ownerID >= 0 ? ("Current: " + c.GREEN + civs[map.map[lookY][lookX].ownerID].food + c.YELLOW + civs[map.map[lookY][lookX].ownerID].gold + c.RED + civs[map.map[lookY][lookX].ownerID].mil + c.RESET) : "",
                 "", //map.map[lookY][lookX].ownerID >= 0 ? ("Gain: " + c.GREEN + civs[map.map[lookY][lookX].ownerID].dFood + c.YELLOW + civs[map.map[lookY][lookX].ownerID].dGold + c.RED + civs[map.map[lookY][lookX].ownerID].dMil + c.RESET) : "",
@@ -1690,6 +1740,8 @@ public class Game implements java.io.Serializable{
                 mode = 2;
             if(input == '3')
                 mode = 3;
+            if(input == '4')
+                mode = 4;
 //            if(input == 'l' && seeplayer < civs.length - 1)
 //                seeplayer++;
 //            if(input == 'k' && seeplayer > 0)
@@ -2094,6 +2146,399 @@ public class Game implements java.io.Serializable{
         return true;
     }
     
+    int civilWar(int id, double scale, boolean organized){
+        if(landArea(id) < 1)
+            return -1;
+        civs = java.util.Arrays.copyOf(civs, civs.length + 1);
+        int rebel = civs.length - 1;
+        Civ temp = new Civ();
+        temp.agressiveness = civs[id].agressiveness;
+        temp.attackBonus1 = civs[id].attackBonus1;
+        temp.attackBonus2 = civs[id].attackBonus2;
+        temp.attackBonus3 = civs[id].attackBonus3;
+        temp.attr = (ArrayList<String>)civs[id].attr.clone();
+        temp.baseCost = civs[id].baseCost;
+        temp.baseOut = civs[id].baseOut;
+        temp.canBuild = civs[id].canBuild;
+        temp.capitalPoints = civs[id].capitalPoints;
+        temp.culture = civs[id].culture;
+        temp.defendBonus1 = civs[id].defendBonus1;
+        temp.defendBonus2 = civs[id].defendBonus2;
+        temp.dieSides = civs[id].dieSides;
+        temp.droveOutColonizersBonus = civs[id].droveOutColonizersBonus;
+        temp.farmCost = civs[id].farmCost;
+        temp.farmOut = civs[id].farmOut;
+        temp.gainsFromLand = civs[id].gainsFromLand;
+        temp.incomeMin = civs[id].incomeMin;
+        temp.rebels = 0;
+        
+        temp.human = false;//civs[id].human;
+        
+        temp.mil = 2 * (int)(civs[id].mil * scale);
+        civs[id].mil -= temp.mil/2;
+        temp.gold = (int)(5 * civs[id].mineCost * scale) + civs[id].mineCost;
+        
+        temp.mineCost = civs[id].mineCost;
+        temp.mineOut = civs[id].mineOut;
+        temp.mostIncomeBonus = civs[id].mostIncomeBonus;
+        temp.mostLandBonus = civs[id].mostLandBonus;
+        
+        temp.name = "Rebel " + civs[id].name;
+        
+        if(rebel < 26 && rebel != 23)
+            temp.sym = (char)('A' + rebel);
+        else
+            temp.sym = (char)('!' + rebel - 26);
+        
+        temp.navyCost = civs[id].navyCost;
+        temp.navyLimit = civs[id].navyLimit;
+        temp.navyMin = civs[id].navyMin;
+        temp.unitedCultureBonus = civs[id].unitedCultureBonus;
+        
+        civs[rebel] = temp;
+        
+        //Gain Land
+        if(organized){
+            chooseRandomSpotInNation(id);
+            getTerr(rebel, lookX, lookY);
+            map.map[lookY][lookX].move = true;
+            chooseCapital(rebel);
+            int land = (int)(landArea(id) * scale);
+            int i = 0;
+            int l = -1;
+            while(i < land && l != i){
+                l = i;
+                for(int j = 0; j < 18; j++){
+                    for(int k = 0; k < 18; k++){
+                        if(rand1.nextFloat() < 0.7 && map.map[k][j].ownerID == id && canBeAttacked(rebel, j, k)){
+                            getTerr(rebel, j, k);
+                            i++;
+                        }
+                    }
+                }
+                for(int j = 0; j < 18; j++){
+                    for(int k = 0; k < 18; k++){
+                        map.map[k][j].move = true;
+                    }
+                }
+            }
+        }else{
+            int land = (int)(landArea(id) * scale);
+            for(int i = 0; i < land; i++){
+                chooseRandomSpotInNation(id);
+                getTerr(rebel, lookX, lookY);
+            }
+            chooseCapital(rebel);
+        }
+        
+        
+        takeTurn(rebel);
+        
+        
+        return rebel;
+    }
+    
+    double terrainBonus(char phy, String action, String trait){
+        if(phy == 'X' || phy == 'x'){
+            if(action.matches("farm")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("mine")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("base")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("attack")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }else if(trait.matches("die 3")){
+                    return 0;
+                }
+            }else if(action.matches("defend")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }
+            }
+        }
+        
+        if(phy == 'M' || phy == 'm'){
+            if(action.matches("farm")){
+                if(trait.matches("cost")){
+                    return 1.5;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("mine")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 2;
+                }
+            }else if(action.matches("base")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("attack")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }else if(trait.matches("die 3")){
+                    return 0;
+                }
+            }else if(action.matches("defend")){
+                if(trait.matches("die 1")){
+                    return 1;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }
+            }
+        }
+        
+        if(phy == 'W' || phy == 'w'){
+            if(action.matches("farm")){
+                if(trait.matches("cost")){
+                    return 1.5;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("mine")){
+                if(trait.matches("cost")){
+                    return 1.1;
+                }else if(trait.matches("output")){
+                    return 2;
+                }
+            }else if(action.matches("base")){
+                if(trait.matches("cost")){
+                    return 1.1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("attack")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }else if(trait.matches("die 3")){
+                    return 0;
+                }
+            }else if(action.matches("defend")){
+                if(trait.matches("die 1")){
+                    return 1;
+                }else if(trait.matches("die 2")){
+                    return 1;
+                }
+            }
+        }
+        
+        if(phy == 'T' || phy == 't'){
+            if(action.matches("farm")){
+                if(trait.matches("cost")){
+                    return 1.1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("mine")){
+                if(trait.matches("cost")){
+                    return 1.1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("base")){
+                if(trait.matches("cost")){
+                    return 1.1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("attack")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }else if(trait.matches("die 3")){
+                    return 0;
+                }
+            }else if(action.matches("defend")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 1;
+                }
+            }
+        }
+        
+        if(phy == 'H' || phy == 'h'){
+            if(action.matches("farm")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("mine")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("base")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("attack")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }else if(trait.matches("die 3")){
+                    return 0;
+                }
+            }else if(action.matches("defend")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }
+            }
+        }
+        
+        if(phy == '*'){
+            if(action.matches("farm")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 0.1;
+                }
+            }else if(action.matches("mine")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("base")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("attack")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }else if(trait.matches("die 3")){
+                    return 0;
+                }
+            }else if(action.matches("defend")){
+                if(trait.matches("die 1")){
+                    return 1;
+                }else if(trait.matches("die 2")){
+                    return 1;
+                }
+            }
+        }
+        
+        if(phy == '~'){
+            if(action.matches("farm")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 0.1;
+                }
+            }else if(action.matches("mine")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("base")){
+                if(trait.matches("cost")){
+                    return 1;
+                }else if(trait.matches("output")){
+                    return 1;
+                }
+            }else if(action.matches("attack")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }else if(trait.matches("die 3")){
+                    return 0;
+                }
+            }else if(action.matches("defend")){
+                if(trait.matches("die 1")){
+                    return 0;
+                }else if(trait.matches("die 2")){
+                    return 0;
+                }
+            }
+        }
+        return 1;
+    }
+    
+    String displayProgressBar(int val, String name){
+        Color c1 = new Color();
+        String output = "";
+        output = output.concat(name + " [");
+            if(val < 25)
+                output = output.concat(c1.LBLUE);
+            else if(val < 50)
+                output = output.concat(c1.LGREEN);
+            else if(val < 75)
+                output = output.concat(c1.LYELLOW);
+            else if(val <= 100)
+                output = output.concat(c1.LRED);
+            
+            
+            for(int i = 0; i < val/10; i++)
+                output = output.concat("=");
+            for(int i = 0; i < 10 - val/10; i++)
+                output = output.concat(" ");
+            output = output.concat(c1.RESET + "] " + val + "%");
+            
+            return output;
+    }
+    
+    String displayValue(int val, boolean highGood){
+        Color c = new Color();
+        String output = "";
+        if(highGood){
+            if(val > 0)
+                output = output.concat(c.LGREEN);
+            else
+                output = output.concat(c.LRED);
+        }else{
+            if(val < 0)
+                output = output.concat(c.LGREEN);
+            else
+                output = output.concat(c.LRED);
+        }
+        if(val >= 0){
+            output = output.concat("+" + val);
+        }else{
+            output = output.concat("" + val);
+        }
+        output = output.concat(c.RESET);
+        return output;
+    }
+    
     void display(int player, String[] list, int mode, boolean showLooker, int x, int y){
         Color c = new Color();
         System.out.println(c.civColor(player) + civs[player].name + c.RESET);
@@ -2115,6 +2560,7 @@ public class Game implements java.io.Serializable{
         System.out.println();
         displayDate();
         System.out.print("  " + (turnNum + 1) + "/" + numTurn);
+        System.out.print("  " + displayProgressBar(civs[player].rebels, "Rebels") + " " + displayValue(landArea(player)/4 - civs[player].dFood, false));
         System.out.println();
         System.out.println("========================================================");
         //if(mode != 3){
@@ -2163,6 +2609,7 @@ public class Game implements java.io.Serializable{
         System.out.println();
         displayDate();
         System.out.print("  " + (turnNum + 1) + "/" + numTurn);
+        System.out.print("  " + civs[player].rebels + " " + (landArea(player)/4 - civs[player].dFood));
         System.out.println();
         System.out.println("========================================================");
         for(int i = 0; i < 18; i++){
