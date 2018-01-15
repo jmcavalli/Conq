@@ -686,7 +686,7 @@ public class Game implements java.io.Serializable{
                 "s- down", 
                 "a- left",
                 "",
-                "",
+                "r- support rebellion",
                 "",
                 "",
                 "",
@@ -722,6 +722,13 @@ public class Game implements java.io.Serializable{
                 moveLooker(2);
             if(input == 'a')
                 moveLooker(3);
+            if(input == 'r'){
+                if(civs[player].gold >= 10 && civs[player].mil >= 10){
+                    civs[player].gold -= 10;
+                    civs[player].mil -= 10;
+                    civs[map.map[lookY][lookX].ownerID].rebels += 10;
+                }
+            }
             
             }
         
@@ -1229,6 +1236,8 @@ public class Game implements java.io.Serializable{
             civs[i].food += civs[i].dFood;
             civs[i].gold += civs[i].dGold;
             civs[i].mil += civs[i].dMil;
+            //if(civs[i].mil > landArea(i) * 10)
+            //    civs[i].mil = landArea(i) * 10;
         }
         
         for(int i = 0; i < civs.length; i++){
@@ -1582,9 +1591,25 @@ public class Game implements java.io.Serializable{
         return 0;
     }
     
+    int commiePoints(int player){
+        if(civs[player].attr.contains("Communist")){
+            int tot = 0;
+            int comTot = 0;
+            for(int i = 0; i < civs.length; i++){
+                if(landArea(i) > 0)
+                    tot++;
+                if(civs[i].attr.contains("Communist") && landArea(i) > 0)
+                    comTot++;
+            }
+            return 200 * comTot/tot;
+        }else
+            return 0;
+    }
+    
     int countPoints(int player){
         civs[player].bonusPoints += 
-                (unitedCulture(player) ? civs[player].unitedCultureBonus : 0)
+                commiePoints(player)
+                + (unitedCulture(player) ? civs[player].unitedCultureBonus : 0)
                 + (droveOutColonizers(player) ? civs[player].droveOutColonizersBonus : 0);
         
         return civs[player].food + civs[player].bonusPoints 
@@ -1691,7 +1716,7 @@ public class Game implements java.io.Serializable{
             menu.clearScreen();
             String[] sidemenu = {
                 "",
-                (map.map[lookY][lookX].ownerID >= 0 ? "Controlled by: " + civs[map.map[lookY][lookX].ownerID].name : "No controller"),
+                (map.map[lookY][lookX].ownerID >= 0 ? "Controlled by: " + civs[map.map[lookY][lookX].ownerID].name + " " + boarderCount(safetyMap(map.map[lookY][lookX].ownerID)) : "No controller"),
                 map.map[lookY][lookX].type == -1 || map.map[lookY][lookX].type == 0 ?
                     (map.map[lookY][lookX].navyID >= 0 ? "Navy: " + civs[map.map[lookY][lookX].navyID].name : "") : "",
                 "Buildings: " + map.map[lookY][lookX].buildings,
@@ -1923,6 +1948,17 @@ public class Game implements java.io.Serializable{
         return total;
     }
     
+    int boarderCount(int [][] safe){
+        int ans = 1;
+        for(int i = 0; i < 18; i++){
+            for(int j = 0; j < 18; j++)
+                if(safe[i][j] == 1)
+                    ans++;
+        }
+        
+        return ans;
+    }
+    
     int[][] safetyMap(int player){
         int[][] safe = new int[18][18];
         int[][] danger = new int[18][18];
@@ -2013,8 +2049,9 @@ public class Game implements java.io.Serializable{
     double calcCost(int player, String buildings, boolean attack){
         int[][] mat = safetyMap(player);
         int depth = findHighestonMap(mat) - 1;
+        int boarder = boarderCount(mat);
         
-        double calcCost = ((double)civs[player].mil + (double)(depth * civs[player].dMil))/(double)(landArea(player) + (attack ? 1 : 0) + totalBuildings(player));      
+        double calcCost = ((double)civs[player].mil /*+ (double)(depth * civs[player].dMil)*/)/(double)((boarder - 1) + (attack ? 1 : 0) + totalBuildings(player));      
         //double calcCost = ((double)civs[player].mil)/(double)(landArea(player) + (attack ? 1 : 0) + totalBuildings(player));
             calcCost += (buildings.charAt(0) == '*' ? calcCost : 0)  
                     + calcCost*((double)numFarms(buildings))
